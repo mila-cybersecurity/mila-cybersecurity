@@ -19,26 +19,23 @@
             margin: 0 auto; /* Centra la tabla */
         }
         th, td {
-            padding: 5px 10px; /* Espacio interno reducido */
+            padding: 10px; /* Espacio interno */
             text-align: left; /* Alineación a la izquierda */
         }
-        th {
-            background-color: #f2f2f2; /* Color de fondo para encabezados */
-        }
         img {
-            width: 20px; /* Tamaño de los iconos */
-            height: 20px;
+            width: 30px; /* Tamaño de los iconos */
+            height: 30px;
         }
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em; /* Tamaño del título en móviles */
             }
             th, td {
-                font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
+                font-size: 16px; /* Tamaño de fuente más pequeño en móviles */
             }
             img {
-                width: 15px; /* Tamaño de iconos en móviles */
-                height: 15px;
+                width: 20px; /* Tamaño de iconos en móviles */
+                height: 20px;
             }
         }
     </style>
@@ -53,7 +50,7 @@
             <th><a href="?C=S;O=A">Size</a></th>
             <th><a href="?C=D;O=A">Description</a></th>
         </tr>
-        <tr><td colspan="5"><hr></td></tr>
+        <tr><th colspan="5"><hr></th></tr>
         <tr>
             <td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td>
             <td><a href="../">Parent Directory</a></td>
