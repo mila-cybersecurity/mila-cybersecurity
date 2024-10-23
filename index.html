@@ -6,22 +6,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center; /* Centra el texto en la página */
+            text-align: center; /* Centra el texto */
             margin: 0;
             padding: 20px;
         }
         h1 {
-            font-size: 2.5em; /* Tamaño de título más grande */
+            font-size: 2.5em; /* Tamaño del título */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
         table {
             width: 90%; /* Ancho de la tabla */
             margin: 0 auto; /* Centra la tabla */
-            border-collapse: collapse; /* Elimina el espacio entre celdas */
         }
         th, td {
-            padding: 8px; /* Espacio interno más pequeño */
-            border: 1px solid #ccc; /* Línea de borde */
+            padding: 5px 10px; /* Espacio interno reducido */
+            text-align: left; /* Alineación a la izquierda */
         }
         th {
             background-color: #f2f2f2; /* Color de fondo para encabezados */
@@ -32,13 +31,13 @@
         }
         @media (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Tamaño de título más pequeño en móviles */
+                font-size: 2em; /* Tamaño del título en móviles */
             }
             th, td {
                 font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
             }
             img {
-                width: 15px; /* Tamaño de iconos más pequeño en móviles */
+                width: 15px; /* Tamaño de iconos en móviles */
                 height: 15px;
             }
         }
@@ -54,7 +53,7 @@
             <th><a href="?C=S;O=A">Size</a></th>
             <th><a href="?C=D;O=A">Description</a></th>
         </tr>
-        <tr><th colspan="5"><hr></th></tr>
+        <tr><td colspan="5"><hr></td></tr>
         <tr>
             <td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td>
             <td><a href="../">Parent Directory</a></td>
@@ -90,7 +89,7 @@
             <td align="right">-</td>
             <td>Información sobre Bug Bounty</td>
         </tr>
-        <tr><th colspan="5"><hr></th></tr>
+        <tr><td colspan="5"><hr></td></tr>
     </table>
     <address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31 Server at github.com Port 443</address>
 </body>
