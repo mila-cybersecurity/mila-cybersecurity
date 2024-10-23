@@ -5,6 +5,33 @@
     <style>
         h1 {
             font-size: 2em; 
+            text-align: center; /* Centrar el título */
+        }
+
+        table {
+            width: 100%; /* Asegurarse de que la tabla ocupe todo el ancho */
+            border-collapse: collapse; /* Colapsar bordes */
+        }
+
+        th, td {
+            padding: 8px; /* Espaciado normal para escritorio */
+            text-align: left; /* Alineación a la izquierda */
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em; /* Tamaño de fuente más pequeño en móvil */
+            }
+
+            th, td {
+                padding: 4px; /* Menos espaciado en móvil */
+            }
+
+            img {
+                width: 20px; /* Ajustar el tamaño de los iconos */
+                height: auto; /* Mantener proporciones */
+            }
         }
     </style>
 </head>
