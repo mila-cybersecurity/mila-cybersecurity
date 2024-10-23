@@ -1,32 +1,48 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index of /_Cybersecurity Profile</title>
     <style>
         body {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente */
+            justify-content: center; /* Centra verticalmente */
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
         }
         h1 {
-            font-size: 2.5em; 
+            font-size: 3em;  /* Tamaño de letra más grande */
             margin-bottom: 20px; 
         }
         table {
-            width: 80%; /* Ajusta el ancho de la tabla */
-            border-collapse: collapse; /* Mejora la apariencia de la tabla */
+            width: 90%; /* Ajusta el ancho de la tabla para que sea más responsiva */
+            border-collapse: collapse; 
+            margin: 0 auto; /* Centra la tabla */
         }
         th, td {
-            padding: 15px; /* Espaciado interno */
-            font-size: 1.2em; /* Tamaño de fuente más grande */
+            padding: 15px; 
+            font-size: 1.5em; /* Tamaño de letra más grande */
         }
         img {
-            width: 20px; /* Tamaño de las imágenes de los íconos */
-            height: 20px;
+            width: 30px; /* Tamaño de iconos más grande */
+            height: 30px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em; /* Tamaño de fuente más pequeño en móviles */
+            }
+            th, td {
+                font-size: 1.2em; /* Tamaño de fuente más pequeño en móviles */
+            }
+            img {
+                width: 25px; /* Tamaño de iconos más pequeño en móviles */
+                height: 25px;
+            }
         }
     </style>
 </head>
@@ -81,4 +97,3 @@
     <address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31 Server at github.com Port 443</address>
 </body>
 </html>
-
