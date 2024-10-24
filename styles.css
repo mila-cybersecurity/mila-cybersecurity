@@ -1,71 +1,87 @@
-/* Estilo del cuerpo */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #e0e0e0; /* Color de fondo gris claro */
-    font-family: Arial, sans-serif; /* Fuente para el texto */
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Estilo para el escritorio */
 #desktop {
-    position: relative; /* Necesario para posicionar los iconos */
-    height: 100vh; /* Altura completa de la vista */
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('background.jpg'); /* Cambia esto por tu imagen de fondo */
+    background-size: cover;
 }
 
-/* Estilo para los iconos */
 .icon {
-    width: 80px; /* Ancho del icono */
-    text-align: center; /* Centrar el texto bajo el icono */
-    margin: 10px; /* Espacio alrededor de cada icono */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
 }
 
-/* Estilo para las ventanas */
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
 .window {
-    display: none; /* Oculta las ventanas por defecto */
-    position: fixed; /* Cambia a fixed para mantener la ventana dentro de la vista */
-    border: 2px solid #333;
-    background-color: #FFF; /* Color de fondo blanco */
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    max-width: 90%; /* Ancho máximo del 90% */
-    max-height: 90%; /* Altura máxima del 90% */
-    z-index: 10; /* Para que se muestre por encima de otros elementos */
-    overflow-y: auto; /* Habilita desplazamiento vertical si el contenido es demasiado largo */
 }
 
-/* Estilo para la cabecera de la ventana */
 .window-header {
-    background-color: #f0f0f0; /* Color de fondo de la cabecera */
-    padding: 10px; /* Espaciado dentro de la cabecera */
-    cursor: move; /* Cursor de movimiento para arrastrar */
-    display: flex; /* Uso de flexbox para el contenido */
-    justify-content: space-between; /* Espacio entre el título y los controles */
+    background-color: #0078D7;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
 }
 
-/* Estilo para los botones de control de la ventana */
 .window-controls {
-    display: flex; /* Uso de flexbox para el control de ventanas */
+    display: flex;
 }
 
-/* Estilo para el botón de cerrar */
-.close-button {
-    margin-left: 5px; /* Espacio entre botones */
-    background-color: red; /* Color de fondo rojo */
-    color: white; /* Color del texto en blanco */
-    border: none; /* Sin borde */
-    padding: 5px 10px; /* Espaciado interno */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+.close-button, .resize-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
 }
 
-/* Estilo para el botón de redimensionar */
-.resize-button {
-    margin-left: 5px; /* Espacio entre botones */
-    background-color: #007BFF; /* Color de fondo azul */
-    color: white; /* Color del texto en blanco */
-    border: none; /* Sin borde */
-    padding: 5px 10px; /* Espaciado interno */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-}
-
-/* Estilo para el contenido de la ventana */
 .window-content {
-    padding: 10px; /* Espaciado dentro del contenido */
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto; /* Permite hacer scroll si hay mucho contenido */
+}
+
+@media (max-width: 600px) {
+    .window {
+        width: 90%; /* Ajusta el tamaño de la ventana en pantallas pequeñas */
+        height: 90%;
+    }
+
+    .icon {
+        width: 80px; /* Ajusta el tamaño de los íconos en pantallas pequeñas */
+    }
+
+    .icon img {
+        width: 40px;
+        height: 40px;
+    }
 }
