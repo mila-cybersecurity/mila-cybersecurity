@@ -1,57 +1,17 @@
-// Función para abrir una ventana
-function openWindow(windowId) {
-    var windowElement = document.getElementById(windowId);
-    windowElement.style.display = 'block';
-    centerWindow(windowElement); // Centra la ventana cuando se abre
+// Script para abrir enlaces en una ventana centrada
+function openCenteredWindow(url) {
+    const width = 800; // Ancho de la ventana
+    const height = 600; // Alto de la ventana
+    const left = (window.innerWidth / 2) - (width / 2);
+    const top = (window.innerHeight / 2) - (height / 2);
+    
+    window.open(url, '_blank', `width=${width},height=${height},top=${top},left=${left}`);
 }
 
-// Función para cerrar una ventana
-function closeWindow(windowId) {
-    document.getElementById(windowId).style.display = 'none';
-}
-
-// Función para centrar la ventana al abrirla
-function centerWindow(windowElement) {
-    windowElement.style.top = "50%";
-    windowElement.style.left = "50%";
-    windowElement.style.transform = "translate(-50%, -50%)";
-}
-
-// Función para arrastrar ventanas
-function makeDraggable(element) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    element.querySelector('.window-header').onmousedown = dragMouseDown;
-
-    function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-    }
-
-    function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        element.style.top = (element.offsetTop - pos2) + "px";
-        element.style.left = (element.offsetLeft - pos1) + "px";
-        element.style.transform = "none"; // Desactiva la transformación para arrastrar
-    }
-
-    function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-    }
-}
-
-// Hacer todas las ventanas movibles
-document.addEventListener("DOMContentLoaded", function() {
-    makeDraggable(document.getElementById('myDocuments'));
-    makeDraggable(document.getElementById('aboutMe'));
-    makeDraggable(document.getElementById('readme'));
+// Ejemplo de uso: llama a esta función al hacer clic en un enlace
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        openCenteredWindow(this.href);
+    });
 });
