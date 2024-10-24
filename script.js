@@ -181,36 +181,27 @@ function openFolder(folderId) {
         `;
     }
 
-    var windowElement = document.getElementById('myDocuments');
-    var contentElement = document.getElementById('myDocumentsContent');
+    var windowElement = document.getElementById(folderId);
+    var contentElement = windowElement.querySelector('.window-content');
     contentElement.innerHTML = content;
+    windowElement.style.display = 'block'; // Muestra la ventana al abrir la carpeta
+    centerWindow(windowElement); // Centra la ventana cuando se abre
 }
 
 // Función para cerrar una carpeta y volver
 function closeFolder(folderId) {
     var windowElement = document.getElementById(folderId);
-    var myDocumentsContent = document.getElementById('myDocumentsContent');
-    myDocumentsContent.innerHTML = `
-        <div class="icon" onclick="openFolder('scriptsFolder')">
-            <img src="icons/folder.gif" alt="Scripts">
-            <p>Scripts</p>
-        </div>
-        <div class="icon" onclick="openFolder('hackTheBoxFolder')">
-            <img src="icons/folder.gif" alt="Hack The Box">
-            <p>Hack The Box</p>
-        </div>
-        <div class="icon" onclick="openFolder('bugBountyFolder')">
-            <img src="icons/folder.gif" alt="Bug Bounty">
-            <p>Bug Bounty</p>
-        </div>
-        <div class="icon" onclick="openFolder('imagesFolder')">
-            <img src="icons/folder.gif" alt="Imágenes">
-            <p>Imágenes</p>
-        </div>
-    `;
+    windowElement.style.display = 'none'; // Oculta la ventana
 }
-
+    
 // Hacer todas las ventanas movibles y redimensionables
 document.addEventListener("DOMContentLoaded", function() {
     makeDraggable(document.getElementById('myDocuments'));
-    makeDraggable
+    makeDraggable(document.getElementById('aboutMe'));
+    makeDraggable(document.getElementById('readme'));
+    makeDraggable(document.getElementById('scriptsFolder'));
+    makeDraggable(document.getElementById('hackTheBoxFolder'));
+    makeDraggable(document.getElementById('bugBountyFolder'));
+    makeDraggable(document.getElementById('imagesFolder'));
+});
+
