@@ -71,7 +71,7 @@ function initResize(e, windowId) {
     }
 }
 
-// Hacer todas las ventanas movibles
+// Hacer todas las ventanas movibles y redimensionables
 document.addEventListener("DOMContentLoaded", function() {
     makeDraggable(document.getElementById('myDocuments'));
     makeDraggable(document.getElementById('aboutMe'));
