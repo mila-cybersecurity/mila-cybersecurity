@@ -3,65 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index of /_Cybersecurity Profile</title>
+    <title>Cybersecurity Profile</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Index of /_Cybersecurity Profile</h1>
+        <h1>_Cybersecurity Profile</h1>
     </header>
-    <main>
-        <a href="../index.html" class="back">Back</a>
-        <table>
-            <tr>
-                <th><img src="/icons/blank.gif" alt="[ICO]"></th>
-                <th><a href="?C=N;O=D">Nombre</a></th>
-                <th><a href="?C=M;O=A">Última modificación</a></th>
-                <th><a href="?C=S;O=A">Tamaño</a></th>
-                <th><a href="?C=D;O=A">Descripción</a></th>
-            </tr>
-            <tr><th colspan="5"><hr></th></tr>
-            <tr>
-                <td><img src="/icons/back.gif" alt="[PARENTDIR]"></td>
-                <td><a href="../">Directorio padre</a></td>
-                <td>&nbsp;</td>
-                <td align="right">-</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
-                <td><a href="About me/">About me/</a></td>
-                <td align="right">2024-10-13 09:54</td>
-                <td align="right">-</td>
-                <td>Información sobre mí</td>
-            </tr>
-            <tr>
-                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
-                <td><a href="Scripts/">Scripts/</a></td>
-                <td align="right">2016-02-09 09:41</td>
-                <td align="right">149K</td>
-                <td>Herramientas y scripts útiles</td>
-            </tr>
-            <tr>
-                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
-                <td><a href="Hack the Box/">Hack the Box/</a></td>
-                <td align="right">2024-10-13 09:54</td>
-                <td align="right">-</td>
-                <td>Retos de Hack the Box</td>
-            </tr>
-            <tr>
-                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
-                <td><a href="Bug Bounty/">Bug Bounty/</a></td>
-                <td align="right">2024-10-13 09:54</td>
-                <td align="right">-</td>
-                <td>Información sobre Bug Bounty</td>
-            </tr>
-            <tr><th colspan="5"><hr></th></tr>
-        </table>
+    
+    <!-- Escritorio de directorio -->
+    <main id="desktop">
+        <!-- Carpeta: "About me" -->
+        <div class="folder" onclick="openFolder('aboutMe')">
+            <img src="folder-icon.png" alt="[DIR]">
+            <p>About Me</p>
+        </div>
+
+        <!-- Carpeta: "Scripts" -->
+        <div class="folder" onclick="openFolder('scripts')">
+            <img src="folder-icon.png" alt="[DIR]">
+            <p>Scripts</p>
+        </div>
+
+        <!-- Carpeta: "Hack the Box" -->
+        <div class="folder" onclick="openFolder('hackTheBox')">
+            <img src="folder-icon.png" alt="[DIR]">
+            <p>Hack the Box</p>
+        </div>
+
+        <!-- Carpeta: "Bug Bounty" -->
+        <div class="folder" onclick="openFolder('bugBounty')">
+            <img src="folder-icon.png" alt="[DIR]">
+            <p>Bug Bounty</p>
+        </div>
+
+        <!-- Tabla de contenido (simulación de estructura de servidor) -->
+        <div id="aboutMe" class="window">
+            <div class="window-header">
+                <p>About Me</p>
+                <button onclick="closeWindow('aboutMe')">X</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre mí.</p>
+            </div>
+        </div>
+
+        <div id="scripts" class="window">
+            <div class="window-header">
+                <p>Scripts</p>
+                <button onclick="closeWindow('scripts')">X</button>
+            </div>
+            <div class="window-content">
+                <ul>
+                    <li><a href="script1.py" target="_blank">Script 1 (Python)</a></li>
+                    <li><a href="script2.sh" target="_blank">Script 2 (Bash)</a></li>
+                    <li><a href="script3.ps1" target="_blank">Script 3 (PowerShell)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="hackTheBox" class="window">
+            <div class="window-header">
+                <p>Hack the Box</p>
+                <button onclick="closeWindow('hackTheBox')">X</button>
+            </div>
+            <div class="window-content">
+                <p>Retos y soluciones de Hack the Box.</p>
+            </div>
+        </div>
+
+        <div id="bugBounty" class="window">
+            <div class="window-header">
+                <p>Bug Bounty</p>
+                <button onclick="closeWindow('bugBounty')">X</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre mis experiencias con Bug Bounty.</p>
+            </div>
+        </div>
     </main>
+
     <footer>
         <address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31 Server at github.com Port 443</address>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
+
