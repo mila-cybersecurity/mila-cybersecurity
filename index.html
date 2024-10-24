@@ -35,144 +35,60 @@
         <div class="window-header">
             <p>Mis Documentos</p>
             <button onclick="closeWindow('myDocuments')">X</button>
+            <div class="resize-handle" onmousedown="initResize(event, 'myDocuments')"></div>
         </div>
-        <div class="window-content" id="myDocumentsContent">
+        <div class="window-content">
             <div class="icon" onclick="openFolder('scriptsFolder')">
                 <img src="icons/folder.gif" alt="Scripts">
                 <p>Scripts</p>
             </div>
-
             <div class="icon" onclick="openFolder('hackTheBoxFolder')">
                 <img src="icons/folder.gif" alt="Hack The Box">
                 <p>Hack The Box</p>
             </div>
-
             <div class="icon" onclick="openFolder('bugBountyFolder')">
                 <img src="icons/folder.gif" alt="Bug Bounty">
                 <p>Bug Bounty</p>
             </div>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'myDocuments')" ontouchstart="initResize(event, 'myDocuments')"></div>
     </div>
 
-    <!-- Ventana "Sobre Mí" -->
     <div id="aboutMe" class="window">
         <div class="window-header">
             <p>Sobre Mí</p>
             <button onclick="closeWindow('aboutMe')">X</button>
+            <div class="resize-handle" onmousedown="initResize(event, 'aboutMe')"></div>
         </div>
         <div class="window-content">
             <p>Este es el contenido sobre mí.</p>
+            <button onclick="goBack('aboutMe', 'myDocuments')">Volver</button>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'aboutMe')" ontouchstart="initResize(event, 'aboutMe')"></div>
     </div>
 
-    <!-- Ventana "ReadMe.txt" -->
     <div id="readme" class="window">
         <div class="window-header">
             <p>ReadMe.txt</p>
             <button onclick="closeWindow('readme')">X</button>
+            <div class="resize-handle" onmousedown="initResize(event, 'readme')"></div>
         </div>
         <div class="window-content">
             <p>Este es un archivo de texto que describe la página.</p>
+            <button onclick="goBack('readme', 'myDocuments')">Volver</button>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'readme')" ontouchstart="initResize(event, 'readme')"></div>
     </div>
 
-    <!-- Ventana "Scripts" -->
-    <div id="scriptsFolder" class="window">
-        <div class="window-header">
-            <p>Scripts</p>
-            <button onclick="closeFolder('scriptsFolder')">Atrás</button>
-        </div>
-        <div class="window-content">
-            <div class="icon">
-                <img src="icons/blank.gif" alt="Script 1">
-                <p>script1.py</p>
-            </div>
-            <div class="icon">
-                <img src="icons/blank.gif" alt="Script 2">
-                <p>script2.py</p>
-            </div>
-            <div class="icon">
-                <img src="icons/blank.gif" alt="Script 3">
-                <p>script3.py</p>
-            </div>
-        </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'scriptsFolder')" ontouchstart="initResize(event, 'scriptsFolder')"></div>
-    </div>
-
-    <!-- Ventana "Hack The Box" -->
-    <div id="hackTheBoxFolder" class="window">
-        <div class="window-header">
-            <p>Hack The Box</p>
-            <button onclick="closeFolder('hackTheBoxFolder')">Atrás</button>
-        </div>
-        <div class="window-content">
-            <div class="icon">
-                <img src="icons/blank.gif" alt="PDF 1">
-                <p>document1.pdf</p>
-            </div>
-            <div class="icon">
-                <img src="icons/blank.gif" alt="PDF 2">
-                <p>document2.pdf</p>
-            </div>
-            <div class="icon">
-                <img src="icons/blank.gif" alt="PDF 3">
-                <p>document3.pdf</p>
-            </div>
-            <div class="icon">
-                <img src="icons/blank.gif" alt="PDF 4">
-                <p>document4.pdf</p>
-            </div>
-        </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'hackTheBoxFolder')" ontouchstart="initResize(event, 'hackTheBoxFolder')"></div>
-    </div>
-
-    <!-- Ventana "Bug Bounty" -->
-    <div id="bugBountyFolder" class="window">
-        <div class="window-header">
-            <p>Bug Bounty</p>
-            <button onclick="closeFolder('bugBountyFolder')">Atrás</button>
-        </div>
-        <div class="window-content">
-            <div class="icon">
-                <img src="icons/blank.gif" alt="PDF 1">
-                <p>document1.pdf</p>
-            </div>
-            <div class="icon">
-                <img src="icons/blank.gif" alt="PDF 2">
-                <p>document2.pdf</p>
-            </div>
-            <div class="icon">
-                <img src="icons/blank.gif" alt="PDF 3">
-                <p>document3.pdf</p>
-            </div>
-        </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'bugBountyFolder')" ontouchstart="initResize(event, 'bugBountyFolder')"></div>
-    </div>
-
-    <!-- Ventana "Imágenes" -->
     <div id="imagesFolder" class="window">
         <div class="window-header">
             <p>Imágenes</p>
-            <button onclick="closeFolder('imagesFolder')">X</button>
+            <button onclick="closeWindow('imagesFolder')">X</button>
+            <div class="resize-handle" onmousedown="initResize(event, 'imagesFolder')"></div>
         </div>
         <div class="window-content">
-            <div class="icon">
-                <img src="path/to/image1.jpg" alt="Imagen 1">
-                <p>imagen1.jpg</p>
-            </div>
-            <div class="icon">
-                <img src="path/to/image2.jpg" alt="Imagen 2">
-                <p>imagen2.jpg</p>
-            </div>
-            <div class="icon">
-                <img src="path/to/image3.jpg" alt="Imagen 3">
-                <p>imagen3.jpg</p>
-            </div>
+            <img src="path/to/image1.jpg" alt="Imagen 1" style="width:100%; height:auto;">
+            <img src="path/to/image2.jpg" alt="Imagen 2" style="width:100%; height:auto;">
+            <img src="path/to/image3.jpg" alt="Imagen 3" style="width:100%; height:auto;">
+            <button onclick="goBack('imagesFolder', 'myDocuments')">Volver</button>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'imagesFolder')" ontouchstart="initResize(event, 'imagesFolder')"></div>
     </div>
 
     <script src="script.js"></script>
