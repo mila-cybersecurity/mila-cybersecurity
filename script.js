@@ -1,76 +1,110 @@
-// Función para abrir una ventana
-function openWindow(windowId) {
-    var windowElement = document.getElementById(windowId);
-    windowElement.style.display = 'block';
-    centerWindow(windowElement); // Centra la ventana cuando se abre
+/* Estilo general del "escritorio" */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Tahoma, sans-serif;
+    background-color: #3A6EA5; /* Color de fondo azul */
 }
 
-// Función para centrar la ventana al abrirla
-function centerWindow(windowElement) {
-    windowElement.style.top = "50%";
-    windowElement.style.left = "50%";
-    windowElement.style.transform = "translate(-50%, -50%)";
+/* Estilo del escritorio */
+#desktop {
+    position: relative;
+    width: 100vw; /* Ajuste para el tamaño completo de la pantalla */
+    height: 100vh; /* Ajuste para el tamaño completo de la pantalla */
 }
 
-// Función para cerrar una ventana
-function closeWindow(windowId) {
-    var windowElement = document.getElementById(windowId);
-    windowElement.style.display = 'none';
+/* Estilo de los íconos en el escritorio */
+.icon {
+    width: 80px;
+    text-align: center;
+    color: black;
+    position: absolute; /* Para que se puedan colocar en posiciones específicas */
 }
 
-// Modificar la función de apertura de ventana para ajustar el tamaño de "Mis Documentos"
-function openDocumentsWindow() {
-    var windowElement = document.getElementById('myDocuments');
-    windowElement.style.display = 'block';
-    windowElement.style.width = "500px"; // Ajustar el ancho
-    windowElement.style.height = "400px"; // Ajustar la altura
-    centerWindow(windowElement);
+.icon img {
+    width: 48px;
+    height: 48px;
 }
 
-// Función para abrir una carpeta
-function openFolder(folderId) {
-    closeAllWindows(); // Cierra todas las ventanas antes de abrir una nueva
-    var folderElement = document.getElementById(folderId);
-    folderElement.style.display = 'block';
-    centerWindow(folderElement); // Centra la ventana cuando se abre
+.icon p {
+    font-size: 12px;
+    margin-top: 5px;
 }
 
-// Función para regresar a la ventana "Mis Documentos"
-function backToDocuments(folderId) {
-    closeWindow(folderId); // Cierra la ventana actual
-    openDocumentsWindow(); // Abre "Mis Documentos"
+/* Estilo de las ventanas emergentes */
+.window {
+    position: fixed;
+    background-color: #E0E0E0;
+    border: 2px solid #000;
+    width: 500px; /* Aumentar el ancho */
+    height: 400px; /* Aumentar la altura */
+    display: none;
+    z-index: 10;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-// Función para cerrar todas las ventanas
-function closeAllWindows() {
-    closeWindow('myDocuments');
-    closeWindow('scriptsFolder');
-    closeWindow('hackTheBoxFolder');
-    closeWindow('bugBountyFolder');
-    closeWindow('imagenesFolder');
-    closeWindow('aboutMe');
-    closeWindow('readme');
+/* Estilo del encabezado de las ventanas */
+.window-header {
+    background-color: #007BFF; /* Color de fondo del encabezado */
+    color: white;
+    padding: 10px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-// Función para redimensionar la ventana
-function resizeWindow(windowId) {
-    var windowElement = document.getElementById(windowId);
-    var currentWidth = parseInt(windowElement.style.width);
-    var currentHeight = parseInt(windowElement.style.height);
+/* Contenido de la ventana */
+.window-content {
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los íconos se envuelvan */
+    justify-content: center; /* Centrar íconos */
+}
 
-    // Alternar entre dos tamaños
-    if (currentWidth === 500) { // Si está en tamaño grande
-        windowElement.style.width = "150px"; // Tamaño pequeño
-        windowElement.style.height = "150px"; // Tamaño pequeño
-    } else {
-        windowElement.style.width = "500px"; // Tamaño grande
-        windowElement.style.height = "400px"; // Tamaño grande
+/* Estilo para los iconos dentro de la ventana */
+.window .icon {
+    width: 80px; /* Ancho de los íconos */
+    text-align: center;
+    margin: 10px; /* Espacio entre íconos */
+}
+
+/* Estilo para el botón de cerrar */
+.window-header button {
+    background-color: red; /* Color del botón de cerrar */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo para el botón de redimensionar */
+.window-header button:nth-child(2) {
+    background-color: #007BFF; /* Color de fondo para botón de redimensionar */
+    margin-left: 5px; /* Espacio entre el botón de cerrar y el de redimensionar */
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .icon {
+        width: 60px; /* Ajuste para pantallas pequeñas */
+        margin: 10px;
     }
 
-    centerWindow(windowElement); // Re-centra la ventana después de redimensionar
-}
+    .window {
+        width: 90%; /* Ajuste de ancho para móviles */
+        height: 90%; /* Ajuste de altura para móviles */
+    }
 
-// Inicializar la ventana de "Mis Documentos" al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-    openDocumentsWindow(); // Abre "Mis Documentos" al cargar la página
-});
+    .window-header {
+        font-size: 16px; /* Tamaño de fuente más grande en móviles */
+    }
+
+    .icon img {
+        width: 36px; /* Ajuste del tamaño del ícono en móviles */
+        height: 36px; /* Ajuste del tamaño del ícono en móviles */
+    }
+}
