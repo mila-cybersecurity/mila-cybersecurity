@@ -27,23 +27,23 @@
 
     <!-- Ventanas emergentes -->
     <div id="myDocuments" class="window">
-        <div class="window-header" id="myDocuments-header">
+        <div class="window-header">
             <p>Mis Documentos</p>
             <button onclick="closeWindow('myDocuments')">X</button>
         </div>
-        <div class="window-content">
-            <!-- Íconos dentro de la ventana "Mis Documentos" -->
-            <div class="icon" onclick="openWindow('scriptsFolder')">
+        <div class="window-content" id="myDocumentsContent">
+            <!-- Contenido inicial de "Mis Documentos" -->
+            <div class="icon" onclick="openFolder('scriptsFolder')">
                 <img src="icons/folder.gif" alt="Scripts">
                 <p>Scripts</p>
             </div>
 
-            <div class="icon" onclick="openWindow('hackTheBoxFolder')">
+            <div class="icon" onclick="openFolder('hackTheBoxFolder')">
                 <img src="icons/folder.gif" alt="Hack The Box">
                 <p>Hack The Box</p>
             </div>
 
-            <div class="icon" onclick="openWindow('bugBountyFolder')">
+            <div class="icon" onclick="openFolder('bugBountyFolder')">
                 <img src="icons/folder.gif" alt="Bug Bounty">
                 <p>Bug Bounty</p>
             </div>
@@ -53,31 +53,33 @@
 
     <!-- Ventana "Sobre Mí" -->
     <div id="aboutMe" class="window">
-        <div class="window-header" id="aboutMe-header">
+        <div class="window-header">
             <p>Sobre Mí</p>
             <button onclick="closeWindow('aboutMe')">X</button>
         </div>
         <div class="window-content">
             <p>Este es el contenido sobre mí.</p>
         </div>
+        <div class="resize-handle" onmousedown="initResize(event, 'aboutMe')"></div>
     </div>
 
     <!-- Ventana "ReadMe.txt" -->
     <div id="readme" class="window">
-        <div class="window-header" id="readme-header">
+        <div class="window-header">
             <p>ReadMe.txt</p>
             <button onclick="closeWindow('readme')">X</button>
         </div>
         <div class="window-content">
             <p>Este es un archivo de texto que describe la página.</p>
         </div>
+        <div class="resize-handle" onmousedown="initResize(event, 'readme')"></div>
     </div>
 
     <!-- Ventana "Scripts" -->
     <div id="scriptsFolder" class="window">
         <div class="window-header">
             <p>Scripts</p>
-            <button onclick="closeWindow('scriptsFolder')">X</button>
+            <button onclick="closeFolder('scriptsFolder')">Atrás</button>
         </div>
         <div class="window-content">
             <div class="icon">
@@ -93,13 +95,14 @@
                 <p>script3.py</p>
             </div>
         </div>
+        <div class="resize-handle" onmousedown="initResize(event, 'scriptsFolder')"></div>
     </div>
 
     <!-- Ventana "Hack The Box" -->
     <div id="hackTheBoxFolder" class="window">
         <div class="window-header">
             <p>Hack The Box</p>
-            <button onclick="closeWindow('hackTheBoxFolder')">X</button>
+            <button onclick="closeFolder('hackTheBoxFolder')">Atrás</button>
         </div>
         <div class="window-content">
             <div class="icon">
@@ -119,9 +122,32 @@
                 <p>document4.pdf</p>
             </div>
         </div>
+        <div class="resize-handle" onmousedown="initResize(event, 'hackTheBoxFolder')"></div>
+    </div>
+
+    <!-- Ventana "Bug Bounty" -->
+    <div id="bugBountyFolder" class="window">
+        <div class="window-header">
+            <p>Bug Bounty</p>
+            <button onclick="closeFolder('bugBountyFolder')">Atrás</button>
+        </div>
+        <div class="window-content">
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 1">
+                <p>document1.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 2">
+                <p>document2.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 3">
+                <p>document3.pdf</p>
+            </div>
+        </div>
+        <div class="resize-handle" onmousedown="initResize(event, 'bugBountyFolder')"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
