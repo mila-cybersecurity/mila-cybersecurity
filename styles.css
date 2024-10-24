@@ -1,58 +1,43 @@
-/* Estilos básicos */
-body, html {
+/* Estilos generales del body */
+body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #87CEEB; /* Azul estilo antiguo */
-}
-
-/* Estilo del header */
-header {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    font-size: 24px;
+    font-family: Tahoma, sans-serif;
+    background-color: #003366; /* Azul estilo Windows 2000 */
 }
 
 /* Escritorio */
 #desktop {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: calc(100% - 100px);
+    justify-content: flex-start;
+    padding: 20px;
 }
 
-/* Carpetas y Archivos */
-.folder {
-    margin: 20px;
+/* Estilo para los iconos del escritorio */
+.icon {
+    width: 80px;
     text-align: center;
+    color: white;
+    margin: 20px;
     cursor: pointer;
 }
 
-.folder img {
-    width: 64px;
-    height: 64px;
+.icon-image {
+    width: 48px;
+    height: 48px;
 }
 
-.folder p {
-    font-size: 14px;
-    color: #333;
-}
-
-/* Ventanas */
+/* Ventanas estilo Windows 2000 */
 .window {
     position: absolute;
-    background-color: white;
+    background-color: #E0E0E0;
     border: 2px solid #000;
-    width: 300px;
-    height: 200px;
-    display: none; /* Oculta por defecto */
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    width: 400px;
+    height: 300px;
+    display: none;
     z-index: 10;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
 }
 
 .window-header {
@@ -61,6 +46,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid black;
 }
 
 .window-header p {
@@ -70,46 +56,48 @@ header {
 
 .window-header button {
     background-color: red;
-    border: none;
     color: white;
+    border: none;
     font-weight: bold;
     cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 
 .window-content {
     padding: 10px;
     overflow-y: auto;
+    font-size: 14px;
 }
 
-/* Estilo de la tabla de servidores */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+/* Estilo de lista para archivos dentro de ventanas */
+.window-content ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-table, th, td {
-    border: 1px solid black;
+.window-content ul li {
+    padding: 5px 0;
 }
 
-th, td {
-    padding: 8px;
-    text-align: left;
+/* Estilo de enlaces de los archivos */
+.window-content ul li a {
+    text-decoration: none;
+    color: #0000EE;
+}
+
+.window-content ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Adaptación para móviles */
 @media only screen and (max-width: 600px) {
-    .folder {
+    .icon {
         margin: 10px;
     }
-
-    .folder img {
-        width: 48px;
-        height: 48px;
-    }
-
     .window {
         width: 90%;
         height: 50%;
     }
 }
+
