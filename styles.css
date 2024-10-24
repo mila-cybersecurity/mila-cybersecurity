@@ -63,6 +63,7 @@ body, html {
     display: flex; /* Utilizamos flexbox para la disposición */
     flex-wrap: wrap; /* Permitir que los íconos se ajusten */
     gap: 10px; /* Espacio entre los íconos */
+    justify-content: flex-start; /* Alinear los iconos al inicio */
 }
 
 /* Estilo para el botón de cerrar */
