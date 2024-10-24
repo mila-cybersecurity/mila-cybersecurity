@@ -1,70 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Escritorio - Windows 2000</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="desktop">
-        <!-- Ícono de "Mis Documentos" -->
-        <div class="icon" onclick="openWindow('myDocuments')">
-            <img src="icons/folder.gif" alt="Carpeta" class="icon-image">
-            <p>Mis Documentos</p>
-        </div>
-
-        <!-- Ícono de "Sobre Mí" -->
-        <div class="icon" onclick="openWindow('aboutMe')">
-            <img src="icons/folder.gif" alt="Carpeta" class="icon-image">
-            <p>Sobre Mí</p>
-        </div>
-
-        <!-- Ícono de archivo .txt -->
-        <div class="icon" onclick="openWindow('readme')">
-            <img src="icons/file.gif" alt="Archivo" class="icon-image">
-            <p>ReadMe.txt</p>
-        </div>
+<!-- Ventana de "Mis Documentos" -->
+<div id="myDocuments" class="window">
+    <div id="myDocuments-header" class="window-header">
+        <p>Mis Documentos</p>
+        <button onclick="closeWindow('myDocuments')">X</button>
     </div>
-
-    <!-- Ventana de "Mis Documentos" -->
-    <div id="myDocuments" class="window">
-        <div class="window-header">
-            <p>Mis Documentos</p>
-            <button onclick="closeWindow('myDocuments')">X</button>
-        </div>
-        <div class="window-content">
-            <ul>
-                <li><a href="scripts/index.html" target="_blank">Scripts</a></li>
-                <li><a href="hack-the-box/index.html" target="_blank">Hack The Box</a></li>
-                <li><a href="bug-bounty/index.html" target="_blank">Bug Bounty</a></li>
-            </ul>
-        </div>
+    <div class="window-content">
+        <ul>
+            <li><a href="scripts/index.html" target="_blank">Scripts</a></li>
+            <li><a href="hack-the-box/index.html" target="_blank">Hack The Box</a></li>
+            <li><a href="bug-bounty/index.html" target="_blank">Bug Bounty</a></li>
+        </ul>
     </div>
+</div>
 
-    <!-- Ventana de "Sobre Mí" -->
-    <div id="aboutMe" class="window">
-        <div class="window-header">
-            <p>Sobre Mí</p>
-            <button onclick="closeWindow('aboutMe')">X</button>
-        </div>
-        <div class="window-content">
-            <p><a href="about-me/index.html" target="_blank">Ver más</a></p>
-        </div>
+<!-- Ventana de "Sobre Mí" -->
+<div id="aboutMe" class="window">
+    <div id="aboutMe-header" class="window-header">
+        <p>Sobre Mí</p>
+        <button onclick="closeWindow('aboutMe')">X</button>
     </div>
-
-    <!-- Ventana de archivo "ReadMe.txt" -->
-    <div id="readme" class="window">
-        <div class="window-header">
-            <p>ReadMe.txt</p>
-            <button onclick="closeWindow('readme')">X</button>
-        </div>
-        <div class="window-content">
-            <p>Este es un archivo de texto que simula el ReadMe de tu página.</p>
-        </div>
+    <div class="window-content">
+        <p><a href="about-me/index.html" target="_blank">Ver más</a></p>
     </div>
+</div>
 
-    <script src="script.js"></script>
-</body>
-</html>
-
+<!-- Ventana de archivo "ReadMe.txt" -->
+<div id="readme" class="window">
+    <div id="readme-header" class="window-header">
+        <p>ReadMe.txt</p>
+        <button onclick="closeWindow('readme')">X</button>
+    </div>
+    <div class="window-content">
+        <p>Este es un archivo de texto que simula el ReadMe de tu página.</p>
+    </div>
+</div>
