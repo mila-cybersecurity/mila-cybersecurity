@@ -1,109 +1,147 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escritorio Virtual</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="desktop">
-        <div class="icon" style="top: 20px; left: 20px;" onclick="openWindow('myDocuments')">
-            <img src="icons/folder.gif" alt="Mis Documentos">
-            <p>Mis Documentos</p>
+<!-- Ventana "Mis Documentos" -->
+<div id="myDocuments" class="window">
+    <div class="window-header" id="myDocuments-header">
+        <p>Mis Documentos</p>
+        <button onclick="closeWindow('myDocuments')">X</button>
+        <div class="resize-button" onclick="resizeWindow('myDocuments')"></div> <!-- Botón para redimensionar -->
+    </div>
+    <div class="window-content">
+        <div class="icon" onclick="openFolder('scriptsFolder')">
+            <img src="icons/folder.gif" alt="Scripts">
+            <p>Scripts</p>
         </div>
-        <div class="icon" style="top: 20px; left: 120px;" onclick="openWindow('aboutMe')">
-            <img src="icons/folder.gif" alt="Sobre Mí">
-            <p>Sobre Mí</p>
+        <div class="icon" onclick="openFolder('hackTheBoxFolder')">
+            <img src="icons/folder.gif" alt="Hack The Box">
+            <p>Hack The Box</p>
         </div>
-        <div class="icon" style="top: 20px; left: 220px;" onclick="openWindow('readme')">
-            <img src="icons/folder.gif" alt="README">
-            <p>README</p>
+        <div class="icon" onclick="openFolder('bugBountyFolder')">
+            <img src="icons/folder.gif" alt="Bug Bounty">
+            <p>Bug Bounty</p>
         </div>
-        <div class="icon" style="top: 20px; left: 320px;" onclick="openWindow('imagesFolder')">
+        <div class="icon" onclick="openFolder('imagenesFolder')">
             <img src="icons/folder.gif" alt="Imágenes">
             <p>Imágenes</p>
         </div>
+    </div>
+</div>
 
-        <!-- Ventana de Mis Documentos -->
-        <div id="myDocuments" class="window">
-            <div class="window-header">
-                <span>Mis Documentos</span>
-                <div class="window-controls">
-                    <button onclick="closeWindow('myDocuments')" class="close-button">X</button>
-                    <button onclick="toggleResize('myDocuments')" class="resize-button">🔳</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <div class="icon" onclick="openFolder('myDocumentsFolder1')">
-                    <img src="icons/blank.gif" alt="Carpeta 1">
-                    <p>Carpeta 1</p>
-                </div>
-                <div class="icon" onclick="openFolder('myDocumentsFolder2')">
-                    <img src="icons/blank.gif" alt="Carpeta 2">
-                    <p>Carpeta 2</p>
-                </div>
-                <div class="icon" onclick="openFolder('myDocumentsFolder3')">
-                    <img src="icons/blank.gif" alt="Carpeta 3">
-                    <p>Carpeta 3</p>
-                </div>
-            </div>
+<!-- Ventana "Scripts" -->
+<div id="scriptsFolder" class="window">
+    <div class="window-header" id="scriptsFolder-header">
+        <p>Scripts</p>
+        <button onclick="closeWindow('scriptsFolder')">X</button>
+        <div class="resize-button" onclick="resizeWindow('scriptsFolder')"></div> <!-- Botón para redimensionar -->
+    </div>
+    <div class="window-content">
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Script 1">
+            <p>script1.py</p>
         </div>
-
-        <!-- Ventana Sobre Mí -->
-        <div id="aboutMe" class="window">
-            <div class="window-header">
-                <span>Sobre Mí</span>
-                <div class="window-controls">
-                    <button onclick="closeWindow('aboutMe')" class="close-button">X</button>
-                    <button onclick="toggleResize('aboutMe')" class="resize-button">🔳</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <p>Información sobre mí...</p>
-            </div>
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Script 2">
+            <p>script2.py</p>
         </div>
-
-        <!-- Ventana README -->
-        <div id="readme" class="window">
-            <div class="window-header">
-                <span>README</span>
-                <div class="window-controls">
-                    <button onclick="closeWindow('readme')" class="close-button">X</button>
-                    <button onclick="toggleResize('readme')" class="resize-button">🔳</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <p>Contenido del README...</p>
-            </div>
-        </div>
-
-        <!-- Ventana Imágenes -->
-        <div id="imagesFolder" class="window">
-            <div class="window-header">
-                <span>Imágenes</span>
-                <div class="window-controls">
-                    <button onclick="closeWindow('imagesFolder')" class="close-button">X</button>
-                    <button onclick="toggleResize('imagesFolder')" class="resize-button">🔳</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <div class="icon">
-                    <img src="path/to/image1.jpg" alt="Imagen 1">
-                    <p>Imagen 1</p>
-                </div>
-                <div class="icon">
-                    <img src="path/to/image2.jpg" alt="Imagen 2">
-                    <p>Imagen 2</p>
-                </div>
-                <div class="icon">
-                    <img src="path/to/image3.jpg" alt="Imagen 3">
-                    <p>Imagen 3</p>
-                </div>
-            </div>
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Script 3">
+            <p>script3.py</p>
         </div>
     </div>
+    <button onclick="backToDocuments('scriptsFolder')">Volver</button> <!-- Botón para regresar -->
+</div>
 
-    <script src="script.js"></script>
+<!-- Ventana "Hack The Box" -->
+<div id="hackTheBoxFolder" class="window">
+    <div class="window-header" id="hackTheBoxFolder-header">
+        <p>Hack The Box</p>
+        <button onclick="closeWindow('hackTheBoxFolder')">X</button>
+        <div class="resize-button" onclick="resizeWindow('hackTheBoxFolder')"></div> <!-- Botón para redimensionar -->
+    </div>
+    <div class="window-content">
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Folder 1">
+            <p>folder1.pdf</p>
+        </div>
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Folder 2">
+            <p>folder2.pdf</p>
+        </div>
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Folder 3">
+            <p>folder3.pdf</p>
+        </div>
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Folder 4">
+            <p>folder4.pdf</p>
+        </div>
+    </div>
+    <button onclick="backToDocuments('hackTheBoxFolder')">Volver</button> <!-- Botón para regresar -->
+</div>
+
+<!-- Ventana "Bug Bounty" -->
+<div id="bugBountyFolder" class="window">
+    <div class="window-header" id="bugBountyFolder-header">
+        <p>Bug Bounty</p>
+        <button onclick="closeWindow('bugBountyFolder')">X</button>
+        <div class="resize-button" onclick="resizeWindow('bugBountyFolder')"></div> <!-- Botón para redimensionar -->
+    </div>
+    <div class="window-content">
+        <div class="icon">
+            <img src="icons/blank.gif" alt="Bug Report">
+            <p>bug_report.pdf</p>
+        </div>
+    </div>
+    <button onclick="backToDocuments('bugBountyFolder')">Volver</button> <!-- Botón para regresar -->
+</div>
+
+<!-- Ventana "Imágenes" -->
+<div id="imagenesFolder" class="window">
+    <div class="window-header" id="imagenesFolder-header">
+        <p>Imágenes</p>
+        <button onclick="closeWindow('imagenesFolder')">X</button>
+        <div class="resize-button" onclick="resizeWindow('imagenesFolder')"></div> <!-- Botón para redimensionar -->
+    </div>
+    <div class="window-content">
+        <div class="icon">
+            <img src="icons/image1.jpg" alt="Imagen 1"> <!-- Asegúrate de tener imágenes en la carpeta "icons" -->
+            <p>image1.jpg</p>
+        </div>
+        <div class="icon">
+            <img src="icons/image2.jpg" alt="Imagen 2">
+            <p>image2.jpg</p>
+        </div>
+        <div class="icon">
+            <img src="icons/image3.jpg" alt="Imagen 3">
+            <p>image3.jpg</p>
+        </div>
+    </div>
+    <button onclick="backToDocuments('imagenesFolder')">Volver</button> <!-- Botón para regresar -->
+</div>
+
+<!-- Ventana "Sobre Mí" -->
+<div id="aboutMe" class="window">
+    <div class="window-header" id="aboutMe-header">
+        <p>Sobre Mí</p>
+        <button onclick="closeWindow('aboutMe')">X</button>
+        <div class="resize-button" onclick="resizeWindow('aboutMe')"></div> <!-- Botón para redimensionar -->
+    </div>
+    <div class="window-content">
+        <p>Este es el contenido sobre mí.</p>
+    </div>
+</div>
+
+<!-- Ventana "ReadMe.txt" -->
+<div id="readme" class="window">
+    <div class="window-header" id="readme-header">
+        <p>ReadMe.txt</p>
+        <button onclick="closeWindow('readme')">X</button>
+        <div class="resize-button" onclick="resizeWindow('readme')"></div> <!-- Botón para redimensionar -->
+    </div>
+    <div class="window-content">
+        <p>Este es un archivo de texto que describe la página.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
