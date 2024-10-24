@@ -3,95 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escritorio</title>
+    <title>Escritorio Virtual</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="desktop">
-        <!-- Íconos en el lado izquierdo -->
-        <div class="icon" onclick="openWindow('myDocuments')" style="top: 20px; left: 20px;">
-            <img src="icons/folder.gif" alt="Folder Icon">
+        <div class="icon" onclick="openWindow('myDocuments')">
+            <img src="icons/folder.gif" alt="Mis Documentos">
             <p>Mis Documentos</p>
         </div>
-
-        <div class="icon" onclick="openWindow('aboutMe')" style="top: 100px; left: 20px;">
-            <img src="icons/folder.gif" alt="About Me Icon">
+        <div class="icon" onclick="openWindow('aboutMe')">
+            <img src="icons/folder.gif" alt="Sobre Mí">
             <p>Sobre Mí</p>
         </div>
-
-        <div class="icon" onclick="openWindow('readme')" style="top: 180px; left: 20px;">
-            <img src="icons/blank.gif" alt="Readme Icon">
-            <p>ReadMe.txt</p>
+        <div class="icon" onclick="openWindow('readme')">
+            <img src="icons/folder.gif" alt="README">
+            <p>README</p>
         </div>
-
-        <div class="icon" onclick="openWindow('imagesFolder')" style="top: 260px; left: 20px;">
-            <img src="icons/folder.gif" alt="Images Icon">
+        <div class="icon" onclick="openWindow('imagesFolder')">
+            <img src="icons/folder.gif" alt="Imágenes">
             <p>Imágenes</p>
         </div>
-    </div>
 
-    <!-- Ventanas emergentes -->
-    <div id="myDocuments" class="window">
-        <div class="window-header">
-            <p>Mis Documentos</p>
-            <button onclick="closeWindow('myDocuments')">X</button>
-            <button onclick="toggleResize('myDocuments')">↔</button>
-        </div>
-        <div class="window-content">
-            <div class="icon" onclick="openFolder('scriptsFolder')">
-                <img src="icons/folder.gif" alt="Scripts">
-                <p>Scripts</p>
+        <!-- Ventana de Mis Documentos -->
+        <div id="myDocuments" class="window">
+            <div class="window-header">
+                <span>Mis Documentos</span>
+                <button onclick="closeWindow('myDocuments')">X</button>
+                <button onclick="toggleResize('myDocuments')">🔳</button>
             </div>
-            <div class="icon" onclick="openFolder('hackTheBoxFolder')">
-                <img src="icons/folder.gif" alt="Hack The Box">
-                <p>Hack The Box</p>
+            <div class="window-content">
+                <div class="icon" onclick="openFolder('myDocumentsFolder1')">
+                    <img src="icons/blank.gif" alt="Carpeta 1">
+                    <p>Carpeta 1</p>
+                </div>
+                <div class="icon" onclick="openFolder('myDocumentsFolder2')">
+                    <img src="icons/blank.gif" alt="Carpeta 2">
+                    <p>Carpeta 2</p>
+                </div>
+                <div class="icon" onclick="openFolder('myDocumentsFolder3')">
+                    <img src="icons/blank.gif" alt="Carpeta 3">
+                    <p>Carpeta 3</p>
+                </div>
             </div>
-            <div class="icon" onclick="openFolder('bugBountyFolder')">
-                <img src="icons/folder.gif" alt="Bug Bounty">
-                <p>Bug Bounty</p>
+        </div>
+
+        <!-- Ventana Sobre Mí -->
+        <div id="aboutMe" class="window">
+            <div class="window-header">
+                <span>Sobre Mí</span>
+                <button onclick="closeWindow('aboutMe')">X</button>
+                <button onclick="toggleResize('aboutMe')">🔳</button>
+            </div>
+            <div class="window-content">
+                <p>Información sobre mí...</p>
             </div>
         </div>
-    </div>
 
-    <div id="aboutMe" class="window">
-        <div class="window-header">
-            <p>Sobre Mí</p>
-            <button onclick="closeWindow('aboutMe')">X</button>
-            <button onclick="toggleResize('aboutMe')">↔</button>
+        <!-- Ventana README -->
+        <div id="readme" class="window">
+            <div class="window-header">
+                <span>README</span>
+                <button onclick="closeWindow('readme')">X</button>
+                <button onclick="toggleResize('readme')">🔳</button>
+            </div>
+            <div class="window-content">
+                <p>Contenido del README...</p>
+            </div>
         </div>
-        <div class="window-content">
-            <p>Este es el contenido sobre mí.</p>
-            <button onclick="goBack('aboutMe', 'myDocuments')">Volver</button>
-        </div>
-    </div>
 
-    <div id="readme" class="window">
-        <div class="window-header">
-            <p>ReadMe.txt</p>
-            <button onclick="closeWindow('readme')">X</button>
-            <button onclick="toggleResize('readme')">↔</button>
-        </div>
-        <div class="window-content">
-            <p>Este es un archivo de texto que describe la página.</p>
-            <button onclick="goBack('readme', 'myDocuments')">Volver</button>
-        </div>
-    </div>
+        <!-- Ventana Imágenes -->
+        <div id="imagesFolder" class="window">
+            <div class="window-header">
+                <span>Imágenes</span>
+                <button onclick="closeWindow('imagesFolder')">X</button>
+                <button onclick="toggleResize('imagesFolder')">🔳</button>
+            </div>
+            <div class="window-content">
+                <div class="icon">
+                    <img src="path/to/image1.jpg" alt="Imagen 1">
+                    <p>Imagen 1</p>
+                </div>
+                <div class="icon">
+                    <img src="path/to/image2.jpg" alt="Imagen 2">
+                    <p>Imagen 2</p>
+                </div>
+                <div class="icon">
+                    <img src="path/to/image3.jpg" alt="Imagen 3">
+                    <p>
 
-    <div id="imagesFolder" class="window">
-        <div class="window-header">
-            <p>Imágenes</p>
-            <button onclick="closeWindow('imagesFolder')">X</button>
-            <button onclick="toggleResize('imagesFolder')">↔</button>
-        </div>
-        <div class="window-content">
-            <img src="path/to/image1.jpg" alt="Imagen 1" style="width:100%; height:auto;">
-            <img src="path/to/image2.jpg" alt="Imagen 2" style="width:100%; height:auto;">
-            <img src="path/to/image3.jpg" alt="Imagen 3" style="width:100%; height:auto;">
-            <button onclick="goBack('imagesFolder', 'myDocuments')">Volver</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
 
