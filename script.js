@@ -1,4 +1,4 @@
-// Función para abrir una ventana con un tamaño específico
+// Función para abrir una ventana
 function openWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     windowElement.style.display = 'block';
@@ -27,7 +27,7 @@ function toggleResize(windowId) {
     let windowWidth, windowHeight;
     if (window.innerWidth < 600) { // Si el ancho de la ventana es menor que 600px (móvil)
         windowWidth = '90%'; // 90% del ancho de la pantalla
-        windowHeight = isSmall ? '400px' : '90%'; // Altura fija si está pequeña, flexible si está grande
+        windowHeight = isSmall ? '60%' : '90%'; // Altura flexible dependiendo del estado
     } else { // Si es una pantalla más grande (computadora)
         windowWidth = isSmall ? '500px' : '600px'; // 500px si está pequeña, 600px si está grande
         windowHeight = isSmall ? '400px' : '600px'; // Altura fija para ambas condiciones
@@ -107,11 +107,3 @@ function makeDraggable(element) {
         pos3 = e.clientX;
         pos4 = e.clientY;
         element.style.top = (element.offsetTop - pos2) + "px";
-        element.style.left = (element.offsetLeft - pos1) + "px";
-    }
-
-    function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-    }
-}
