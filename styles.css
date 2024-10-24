@@ -55,6 +55,33 @@ body, html {
     align-items: center;
 }
 
+/* Controles de la ventana */
+.window-controls {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para el botón de cerrar */
+.close-button {
+    background-color: red; /* Color del botón de cerrar */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px; /* Espacio entre el botón de cerrar y el de redimensionar */
+}
+
+/* Estilo para el botón de redimensionar */
+.resize-button {
+    background-color: #007BFF; /* Color de fondo para botón de redimensionar */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
 /* Contenido de la ventana */
 .window-content {
     padding: 10px;
@@ -69,22 +96,6 @@ body, html {
     width: 80px; /* Ancho de los íconos */
     text-align: center;
     margin: 10px; /* Espacio entre íconos */
-}
-
-/* Estilo para el botón de cerrar */
-.window-header button {
-    background-color: red; /* Color del botón de cerrar */
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-}
-
-/* Estilo para el botón de redimensionar */
-.window-header button:nth-child(2) {
-    background-color: #007BFF; /* Color de fondo para botón de redimensionar */
-    margin-left: 5px; /* Espacio entre el botón de cerrar y el de redimensionar */
 }
 
 /* Responsividad */
