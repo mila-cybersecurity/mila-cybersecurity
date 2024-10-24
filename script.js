@@ -5,6 +5,11 @@ function openWindow(windowId) {
     centerWindow(windowElement); // Centra la ventana cuando se abre
 }
 
+// Función para cerrar una ventana
+function closeWindow(windowId) {
+    document.getElementById(windowId).style.display = 'none';
+}
+
 // Función para centrar la ventana al abrirla
 function centerWindow(windowElement) {
     windowElement.style.top = "50%";
@@ -12,11 +17,65 @@ function centerWindow(windowElement) {
     windowElement.style.transform = "translate(-50%, -50%)";
 }
 
-// Modificar la función de apertura de ventana para ajustar el tamaño de "Mis Documentos"
-function openDocumentsWindow() {
-    var windowElement = document.getElementById('myDocuments');
-    windowElement.style.display = 'block';
-    windowElement.style.width = "500px"; // Ajustar el ancho
-    windowElement.style.height = "400px"; // Ajustar la altura
-    centerWindow(windowElement);
+// Función para arrastrar ventanas
+function makeDraggable(element) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    element.querySelector('.window-header').onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+        element.style.transform = "none"; // Desactiva la transformación para arrastrar
+    }
+
+    function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
 }
+
+// Función para inicializar el redimensionamiento
+function initResize(e, windowId) {
+    e.preventDefault();
+    var windowElement = document.getElementById(windowId);
+    windowElement.style.transition = "none"; // Desactiva la transición para redimensionar
+
+    // Iniciar el redimensionamiento
+    document.onmouseup = stopResize;
+    document.onmousemove = elementResize;
+
+    function elementResize(e) {
+        windowElement.style.width = (e.clientX - windowElement.getBoundingClientRect().left) + "px";
+        windowElement.style.height = (e.clientY - windowElement.getBoundingClientRect().top) + "px";
+    }
+
+    function stopResize() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+        windowElement.style.transition = "all 0.2s"; // Reactiva la transición
+    }
+}
+
+// Hacer todas las ventanas movibles
+document.addEventListener("DOMContentLoaded", function() {
+    makeDraggable(document.getElementById('myDocuments'));
+    makeDraggable(document.getElementById('aboutMe'));
+    makeDraggable(document.getElementById('readme'));
+    makeDraggable(document.getElementById('scriptsFolder'));
+    makeDraggable(document.getElementById('hackTheBoxFolder'));
+});
