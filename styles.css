@@ -1,49 +1,18 @@
-/* Fondo clásico de Windows 2000 */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Tahoma, sans-serif; /* Fuente clásica */
-    background-color: #003366; /* Azul clásico */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* ... el resto del estilo sigue igual ... */
 
-/* Escritorio */
-#desktop {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-/* Estilo para los íconos */
-.icon {
-    width: 80px;
-    text-align: center;
-    color: white;
-    margin: 20px;
-    cursor: pointer;
-}
-
-.icon-image {
-    width: 48px;
-    height: 48px;
-}
-
-/* Estilo de las ventanas */
+/* Estilos para las ventanas */
 .window {
     position: absolute;
     background-color: #E0E0E0;
     border: 2px solid #000;
     width: 400px;
     height: 300px;
-    display: none; /* Oculto por defecto */
+    display: none;
     z-index: 10;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    top: 50px;
+    left: 50px;
+    cursor: default;
 }
 
 .window-header {
@@ -53,13 +22,10 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    cursor: move; /* Indicar que es una zona para mover */
 }
 
-.window-header p {
-    margin: 0;
-    font-weight: bold;
-}
-
+/* Estilo de los botones de cerrar */
 .window-header button {
     background-color: red;
     color: white;
@@ -74,35 +40,4 @@ body {
     padding: 10px;
     font-size: 14px;
 }
-
-/* Enlaces de archivos */
-.window-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.window-content ul li {
-    padding: 5px 0;
-}
-
-.window-content ul li a {
-    text-decoration: none;
-    color: #0000EE;
-}
-
-.window-content ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Adaptación para móviles */
-@media only screen and (max-width: 600px) {
-    .icon {
-        margin: 10px;
-    }
-    .window {
-        width: 90%;
-        height: 50%;
-    }
-}
-
 
