@@ -8,17 +8,18 @@
 </head>
 <body>
     <div id="desktop">
-        <div class="icon" onclick="openWindow('myDocuments')">
+        <!-- Íconos en el lado izquierdo -->
+        <div class="icon" onclick="openWindow('myDocuments')" style="top: 20px; left: 20px;">
             <img src="icons/folder.gif" alt="Folder Icon">
             <p>Mis Documentos</p>
         </div>
 
-        <div class="icon" onclick="openWindow('aboutMe')">
+        <div class="icon" onclick="openWindow('aboutMe')" style="top: 100px; left: 20px;">
             <img src="icons/folder.gif" alt="About Me Icon">
             <p>Sobre Mí</p>
         </div>
 
-        <div class="icon" onclick="openWindow('readme')">
+        <div class="icon" onclick="openWindow('readme')" style="top: 180px; left: 20px;">
             <img src="icons/blank.gif" alt="Readme Icon">
             <p>ReadMe.txt</p>
         </div>
@@ -31,14 +32,25 @@
             <button onclick="closeWindow('myDocuments')">X</button>
         </div>
         <div class="window-content">
-            <ul>
-                <li><a href="scripts/index.html" target="_blank">Scripts</a></li>
-                <li><a href="hack-the-box/index.html" target="_blank">Hack The Box</a></li>
-                <li><a href="bug-bounty/index.html" target="_blank">Bug Bounty</a></li>
-            </ul>
+            <!-- Íconos dentro de la ventana "Mis Documentos" -->
+            <div class="icon" onclick="openWindow('scriptsFolder')">
+                <img src="icons/folder.gif" alt="Scripts">
+                <p>Scripts</p>
+            </div>
+
+            <div class="icon" onclick="openWindow('hackTheBoxFolder')">
+                <img src="icons/folder.gif" alt="Hack The Box">
+                <p>Hack The Box</p>
+            </div>
+
+            <div class="icon" onclick="openWindow('bugBountyFolder')">
+                <img src="icons/folder.gif" alt="Bug Bounty">
+                <p>Bug Bounty</p>
+            </div>
         </div>
     </div>
 
+    <!-- Ventana "Sobre Mí" -->
     <div id="aboutMe" class="window">
         <div class="window-header" id="aboutMe-header">
             <p>Sobre Mí</p>
@@ -49,6 +61,7 @@
         </div>
     </div>
 
+    <!-- Ventana "ReadMe.txt" -->
     <div id="readme" class="window">
         <div class="window-header" id="readme-header">
             <p>ReadMe.txt</p>
@@ -58,6 +71,10 @@
             <p>Este es un archivo de texto que describe la página.</p>
         </div>
     </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
     <script src="script.js"></script>
 </body>
