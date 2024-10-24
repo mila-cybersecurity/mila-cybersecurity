@@ -3,79 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escritorio</title>
+    <title>Index of /_Cybersecurity Profile</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="desktop">
-        <!-- Íconos en el lado izquierdo -->
-        <div class="icon" onclick="openWindow('myDocuments')" style="top: 20px; left: 20px;">
-            <img src="icons/folder.gif" alt="Folder Icon">
-            <p>Mis Documentos</p>
-        </div>
-
-        <div class="icon" onclick="openWindow('aboutMe')" style="top: 100px; left: 20px;">
-            <img src="icons/folder.gif" alt="About Me Icon">
-            <p>Sobre Mí</p>
-        </div>
-
-        <div class="icon" onclick="openWindow('readme')" style="top: 180px; left: 20px;">
-            <img src="icons/blank.gif" alt="Readme Icon">
-            <p>ReadMe.txt</p>
-        </div>
-    </div>
-
-    <!-- Ventanas emergentes -->
-    <div id="myDocuments" class="window">
-        <div class="window-header" id="myDocuments-header">
-            <p>Mis Documentos</p>
-            <button onclick="closeWindow('myDocuments')">X</button>
-        </div>
-        <div class="window-content">
-            <!-- Íconos dentro de la ventana "Mis Documentos" -->
-            <div class="icon" onclick="openWindow('scriptsFolder')">
-                <img src="icons/folder.gif" alt="Scripts">
-                <p>Scripts</p>
-            </div>
-
-            <div class="icon" onclick="openWindow('hackTheBoxFolder')">
-                <img src="icons/folder.gif" alt="Hack The Box">
-                <p>Hack The Box</p>
-            </div>
-
-            <div class="icon" onclick="openWindow('bugBountyFolder')">
-                <img src="icons/folder.gif" alt="Bug Bounty">
-                <p>Bug Bounty</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Ventana "Sobre Mí" -->
-    <div id="aboutMe" class="window">
-        <div class="window-header" id="aboutMe-header">
-            <p>Sobre Mí</p>
-            <button onclick="closeWindow('aboutMe')">X</button>
-        </div>
-        <div class="window-content">
-            <p>Este es el contenido sobre mí.</p>
-        </div>
-    </div>
-
-    <!-- Ventana "ReadMe.txt" -->
-    <div id="readme" class="window">
-        <div class="window-header" id="readme-header">
-            <p>ReadMe.txt</p>
-            <button onclick="closeWindow('readme')">X</button>
-        </div>
-        <div class="window-content">
-            <p>Este es un archivo de texto que describe la página.</p>
-        </div>
-    </div>
-
+    <header>
+        <h1>Index of /_Cybersecurity Profile</h1>
+    </header>
+    <main>
+        <a href="../index.html" class="back">Back</a>
+        <table>
+            <tr>
+                <th><img src="/icons/blank.gif" alt="[ICO]"></th>
+                <th><a href="?C=N;O=D">Nombre</a></th>
+                <th><a href="?C=M;O=A">Última modificación</a></th>
+                <th><a href="?C=S;O=A">Tamaño</a></th>
+                <th><a href="?C=D;O=A">Descripción</a></th>
+            </tr>
+            <tr><th colspan="5"><hr></th></tr>
+            <tr>
+                <td><img src="/icons/back.gif" alt="[PARENTDIR]"></td>
+                <td><a href="../">Directorio padre</a></td>
+                <td>&nbsp;</td>
+                <td align="right">-</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
+                <td><a href="About me/">About me/</a></td>
+                <td align="right">2024-10-13 09:54</td>
+                <td align="right">-</td>
+                <td>Información sobre mí</td>
+            </tr>
+            <tr>
+                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
+                <td><a href="Scripts/">Scripts/</a></td>
+                <td align="right">2016-02-09 09:41</td>
+                <td align="right">149K</td>
+                <td>Herramientas y scripts útiles</td>
+            </tr>
+            <tr>
+                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
+                <td><a href="Hack the Box/">Hack the Box/</a></td>
+                <td align="right">2024-10-13 09:54</td>
+                <td align="right">-</td>
+                <td>Retos de Hack the Box</td>
+            </tr>
+            <tr>
+                <td><img src="/icons/folder.gif" alt="[DIR]"></td>
+                <td><a href="Bug Bounty/">Bug Bounty/</a></td>
+                <td align="right">2024-10-13 09:54</td>
+                <td align="right">-</td>
+                <td>Información sobre Bug Bounty</td>
+            </tr>
+            <tr><th colspan="5"><hr></th></tr>
+        </table>
+    </main>
+    <footer>
+        <address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31 Server at github.com Port 443</address>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
 
-    <script src="script.js"></script>
-</body>
-</html>
