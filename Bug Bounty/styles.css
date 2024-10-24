@@ -1,0 +1,27 @@
+/* Estilo para el contenido de Bug Bounty */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #34495E;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #16A085;
+    padding: 15px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
