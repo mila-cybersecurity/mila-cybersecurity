@@ -42,6 +42,8 @@ body, html {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 240px; /* Tamaño pequeño inicial */
+    height: 240px; /* Tamaño pequeño inicial */
 }
 
 /* Estilo del encabezado de las ventanas */
@@ -58,6 +60,9 @@ body, html {
 /* Contenido de la ventana */
 .window-content {
     padding: 10px;
+    display: flex; /* Utilizamos flexbox para la disposición */
+    flex-wrap: wrap; /* Permitir que los íconos se ajusten */
+    gap: 10px; /* Espacio entre los íconos */
 }
 
 /* Estilo para el botón de cerrar */
@@ -70,11 +75,10 @@ body, html {
     height: 20px;
 }
 
-/* Estilo para los botones de redimensionar */
-.window-header button:nth-child(2),
-.window-header button:nth-child(3) {
-    background-color: #007BFF; /* Color de fondo para botones de redimensionar */
-    margin-left: 5px; /* Espacio entre los botones */
+/* Estilo para el botón de redimensionar */
+.window-header button:nth-child(2) {
+    background-color: #007BFF; /* Color de fondo para botón de redimensionar */
+    margin-left: 5px; /* Espacio entre el botón de cerrar y el de redimensionar */
 }
 
 /* Responsividad */
