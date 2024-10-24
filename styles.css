@@ -59,6 +59,9 @@ body, html {
 
 .window-content {
     padding: 10px;
+    display: flex;           /* Usamos flexbox para organizar los íconos */
+    flex-wrap: wrap;       /* Permitir que los íconos se envuelvan en múltiples filas */
+    justify-content: flex-start; /* Alineamos a la izquierda */
 }
 
 /* Controles de la ventana */
