@@ -21,9 +21,9 @@ function centerWindow(windowElement) {
 function makeDraggable(element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     element.querySelector('.window-header').onmousedown = dragMouseDown;
+    element.querySelector('.window-header').ontouchstart = dragTouchStart;
 
     function dragMouseDown(e) {
-        e = e || window.event;
         e.preventDefault();
         pos3 = e.clientX;
         pos4 = e.clientY;
@@ -31,8 +31,15 @@ function makeDraggable(element) {
         document.onmousemove = elementDrag;
     }
 
+    function dragTouchStart(e) {
+        e.preventDefault();
+        pos3 = e.touches[0].clientX;
+        pos4 = e.touches[0].clientY;
+        document.ontouchend = closeDragElement;
+        document.ontouchmove = elementDragTouch;
+    }
+
     function elementDrag(e) {
-        e = e || window.event;
         e.preventDefault();
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
@@ -43,9 +50,22 @@ function makeDraggable(element) {
         element.style.transform = "none"; // Desactiva la transformación para arrastrar
     }
 
+    function elementDragTouch(e) {
+        e.preventDefault();
+        pos1 = pos3 - e.touches[0].clientX;
+        pos2 = pos4 - e.touches[0].clientY;
+        pos3 = e.touches[0].clientX;
+        pos4 = e.touches[0].clientY;
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+        element.style.transform = "none"; // Desactiva la transformación para arrastrar
+    }
+
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        document.ontouchend = null;
+        document.ontouchmove = null;
     }
 }
 
@@ -58,6 +78,8 @@ function initResize(e, windowId) {
     // Iniciar el redimensionamiento
     document.onmouseup = stopResize;
     document.onmousemove = elementResize;
+    document.ontouchend = stopResize;
+    document.ontouchmove = elementResizeTouch;
 
     function elementResize(e) {
         var newWidth = e.clientX - windowElement.getBoundingClientRect().left;
@@ -70,9 +92,22 @@ function initResize(e, windowId) {
         }
     }
 
+    function elementResizeTouch(e) {
+        var newWidth = e.touches[0].clientX - windowElement.getBoundingClientRect().left;
+        var newHeight = e.touches[0].clientY - windowElement.getBoundingClientRect().top;
+
+        // Aplicar límites de tamaño
+        if (newWidth > 150 && newHeight > 100) { // Tope de tamaño
+            windowElement.style.width = newWidth + "px";
+            windowElement.style.height = newHeight + "px";
+        }
+    }
+
     function stopResize() {
         document.onmouseup = null;
         document.onmousemove = null;
+        document.ontouchend = null;
+        document.ontouchmove = null;
         windowElement.style.transition = "all 0.2s"; // Reactiva la transición
     }
 }
@@ -82,15 +117,15 @@ function openFolder(folderId) {
     var content = '';
     if (folderId === 'scriptsFolder') {
         content = `
-            <div class="icon" onclick="viewScript('script1.py')">
+            <div class="icon">
                 <img src="icons/blank.gif" alt="Script 1">
                 <p>script1.py</p>
             </div>
-            <div class="icon" onclick="viewScript('script2.py')">
+            <div class="icon">
                 <img src="icons/blank.gif" alt="Script 2">
                 <p>script2.py</p>
             </div>
-            <div class="icon" onclick="viewScript('script3.py')">
+            <div class="icon">
                 <img src="icons/blank.gif" alt="Script 3">
                 <p>script3.py</p>
             </div>
@@ -129,6 +164,21 @@ function openFolder(folderId) {
                 <p>document3.pdf</p>
             </div>
         `;
+    } else if (folderId === 'imagesFolder') {
+        content = `
+            <div class="icon">
+                <img src="path/to/image1.jpg" alt="Imagen 1">
+                <p>imagen1.jpg</p>
+            </div>
+            <div class="icon">
+                <img src="path/to/image2.jpg" alt="Imagen 2">
+                <p>imagen2.jpg</p>
+            </div>
+            <div class="icon">
+                <img src="path/to/image3.jpg" alt="Imagen 3">
+                <p>imagen3.jpg</p>
+            </div>
+        `;
     }
 
     var windowElement = document.getElementById('myDocuments');
@@ -153,15 +203,14 @@ function closeFolder(folderId) {
             <img src="icons/folder.gif" alt="Bug Bounty">
             <p>Bug Bounty</p>
         </div>
+        <div class="icon" onclick="openFolder('imagesFolder')">
+            <img src="icons/folder.gif" alt="Imágenes">
+            <p>Imágenes</p>
+        </div>
     `;
 }
 
 // Hacer todas las ventanas movibles y redimensionables
 document.addEventListener("DOMContentLoaded", function() {
     makeDraggable(document.getElementById('myDocuments'));
-    makeDraggable(document.getElementById('aboutMe'));
-    makeDraggable(document.getElementById('readme'));
-    makeDraggable(document.getElementById('scriptsFolder'));
-    makeDraggable(document.getElementById('hackTheBoxFolder'));
-    makeDraggable(document.getElementById('bugBountyFolder'));
-});
+    makeDraggable
