@@ -1,20 +1,26 @@
-/* Estilos generales del body */
+/* Fondo clásico de Windows 2000 */
 body {
     margin: 0;
     padding: 0;
-    font-family: Tahoma, sans-serif;
-    background-color: #003366; /* Azul estilo Windows 2000 */
+    font-family: Tahoma, sans-serif; /* Fuente clásica */
+    background-color: #003366; /* Azul clásico */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Escritorio */
 #desktop {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     padding: 20px;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
-/* Estilo para los iconos del escritorio */
+/* Estilo para los íconos */
 .icon {
     width: 80px;
     text-align: center;
@@ -28,16 +34,16 @@ body {
     height: 48px;
 }
 
-/* Ventanas estilo Windows 2000 */
+/* Estilo de las ventanas */
 .window {
     position: absolute;
     background-color: #E0E0E0;
     border: 2px solid #000;
     width: 400px;
     height: 300px;
-    display: none;
+    display: none; /* Oculto por defecto */
     z-index: 10;
-    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .window-header {
@@ -66,11 +72,10 @@ body {
 
 .window-content {
     padding: 10px;
-    overflow-y: auto;
     font-size: 14px;
 }
 
-/* Estilo de lista para archivos dentro de ventanas */
+/* Enlaces de archivos */
 .window-content ul {
     list-style-type: none;
     padding: 0;
@@ -80,7 +85,6 @@ body {
     padding: 5px 0;
 }
 
-/* Estilo de enlaces de los archivos */
 .window-content ul li a {
     text-decoration: none;
     color: #0000EE;
@@ -100,4 +104,5 @@ body {
         height: 50%;
     }
 }
+
 
