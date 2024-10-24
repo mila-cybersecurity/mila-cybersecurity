@@ -3,6 +3,7 @@ function openWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     windowElement.style.display = 'block';
     centerWindow(windowElement); // Centra la ventana cuando se abre
+    setInitialSize(windowElement); // Establece el tamaño inicial
 }
 
 // Función para cerrar una ventana
@@ -18,15 +19,21 @@ function centerWindow(windowElement) {
     windowElement.style.transform = "translate(-50%, -50%)";
 }
 
+// Función para establecer el tamaño inicial de la ventana
+function setInitialSize(windowElement) {
+    windowElement.style.width = '10cm'; // Tamaño inicial de 10x10 cm
+    windowElement.style.height = '10cm';
+}
+
 // Función para alternar el tamaño de la ventana
 function toggleResize(windowId) {
     const windowElement = document.getElementById(windowId);
-    if (windowElement.style.width === '80%') {
-        windowElement.style.width = '500px'; // Tamaño pequeño
-        windowElement.style.height = '400px'; // Tamaño pequeño
+    if (windowElement.style.width === '15cm') {
+        windowElement.style.width = '10cm'; // Regresar al tamaño pequeño
+        windowElement.style.height = '10cm';
     } else {
-        windowElement.style.width = '80%'; // Tamaño grande
-        windowElement.style.height = '80%'; // Tamaño grande
+        windowElement.style.width = '15cm'; // Cambiar a tamaño grande
+        windowElement.style.height = '15cm';
     }
 }
 
