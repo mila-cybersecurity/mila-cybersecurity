@@ -25,30 +25,38 @@
             <p>Imágenes</p>
         </div>
 
-        <!-- Ventana de Mis Documentos -->
-        <div id="myDocuments" class="window">
-            <div class="window-header">
-                <span>Mis Documentos</span>
-                <div class="window-controls">
-                    <button onclick="closeWindow('myDocuments')" class="close-button">X</button>
-                    <button onclick="toggleResize('myDocuments')" class="resize-button">🔳</button>
-                </div>
-            </div>
-            <div class="window-content">
-                <div class="icon" onclick="openFolder('myDocumentsFolder1')">
-                    <img src="icons/folder.png" alt="Carpeta 1">
-                    <p>Carpeta 1</p>
-                </div>
-                <div class="icon" onclick="openFolder('myDocumentsFolder2')">
-                    <img src="icons/folder.png" alt="Carpeta 2">
-                    <p>Carpeta 2</p>
-                </div>
-                <div class="icon" onclick="openFolder('myDocumentsFolder3')">
-                    <img src="icons/folder.png" alt="Carpeta 3">
-                    <p>Carpeta 3</p>
-                </div>
-            </div>
+        
+    <!-- Ventana de Mis Documentos -->
+<div id="myDocuments" class="window">
+    <div class="window-header">
+        <span>Mis Documentos</span>
+        <div class="window-controls">
+            <button onclick="closeWindow('myDocuments')" class="close-button">X</button>
+            <button onclick="toggleResize('myDocuments')" class="resize-button">🔳</button>
         </div>
+    </div>
+    <div class="window-content">
+        <div class="icon">
+            <a href="hack-the-box/index.html" target="_blank">
+                <img src="icons/folder.png" alt="Hack The Box">
+                <p>Hack The Box</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="bug-bounty/index.html" target="_blank">
+                <img src="icons/folder.png" alt="Bug Bounty">
+                <p>Bug Bounty</p>
+            </a>
+        </div>
+        <div class="icon">
+            <a href="scripts/index.html" target="_blank">
+                <img src="icons/folder.png" alt="Scripts">
+                <p>Scripts</p>
+            </a>
+        </div>
+    </div>
+</div>
+
 
         <!-- Ventana Sobre Mí -->
         <div id="aboutMe" class="window">
