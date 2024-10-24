@@ -1,55 +1,81 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Courier New", monospace;
+    background-color: #00ff00; /* Verde brillante */
+    color: #000;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 header {
-    background: #333;
+    background: #000;
     color: #fff;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     font-size: 2em;
+    margin: 0;
 }
 
-main {
+.main {
     padding: 20px;
-    overflow-x: auto; /* Permite desplazamiento horizontal en dispositivos pequeños */
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a.back {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    background-color: #000;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
 }
 
 th {
-    background: #f0f0f0;
+    background: #555;
+    color: #fff;
 }
 
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #333;
+    background: #000;
     color: #fff;
+}
+
+address {
+    font-style: normal;
 }
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.5em; /* Tamaño de fuente más pequeño en móviles */
+        font-size: 1.5em;
     }
     
     th, td {
-        font-size: 0.9em; /* Fuente más pequeña en móviles */
+        font-size: 0.9em;
     }
 }
