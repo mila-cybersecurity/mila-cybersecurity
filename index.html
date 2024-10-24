@@ -35,7 +35,8 @@
         <div class="window-header">
             <p>Mis Documentos</p>
             <button onclick="closeWindow('myDocuments')">X</button>
-            <div class="resize-handle" onmousedown="initResize(event, 'myDocuments')"></div>
+            <button onclick="resizeWindow('myDocuments', 'small')">Pequeño</button>
+            <button onclick="resizeWindow('myDocuments', 'large')">Grande</button>
         </div>
         <div class="window-content">
             <div class="icon" onclick="openFolder('scriptsFolder')">
@@ -57,7 +58,8 @@
         <div class="window-header">
             <p>Sobre Mí</p>
             <button onclick="closeWindow('aboutMe')">X</button>
-            <div class="resize-handle" onmousedown="initResize(event, 'aboutMe')"></div>
+            <button onclick="resizeWindow('aboutMe', 'small')">Pequeño</button>
+            <button onclick="resizeWindow('aboutMe', 'large')">Grande</button>
         </div>
         <div class="window-content">
             <p>Este es el contenido sobre mí.</p>
@@ -69,7 +71,8 @@
         <div class="window-header">
             <p>ReadMe.txt</p>
             <button onclick="closeWindow('readme')">X</button>
-            <div class="resize-handle" onmousedown="initResize(event, 'readme')"></div>
+            <button onclick="resizeWindow('readme', 'small')">Pequeño</button>
+            <button onclick="resizeWindow('readme', 'large')">Grande</button>
         </div>
         <div class="window-content">
             <p>Este es un archivo de texto que describe la página.</p>
@@ -81,7 +84,8 @@
         <div class="window-header">
             <p>Imágenes</p>
             <button onclick="closeWindow('imagesFolder')">X</button>
-            <div class="resize-handle" onmousedown="initResize(event, 'imagesFolder')"></div>
+            <button onclick="resizeWindow('imagesFolder', 'small')">Pequeño</button>
+            <button onclick="resizeWindow('imagesFolder', 'large')">Grande</button>
         </div>
         <div class="window-content">
             <img src="path/to/image1.jpg" alt="Imagen 1" style="width:100%; height:auto;">
