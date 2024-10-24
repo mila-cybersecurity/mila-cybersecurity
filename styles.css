@@ -1,88 +1,72 @@
-/* Estilo general del "escritorio" */
-body, html {
+body {
+    font-family: "Courier New", monospace;
+    background-color: #00ff00;
+    color: #000;
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: Tahoma, sans-serif;
-    background-color: #3A6EA5;
 }
 
-#desktop {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* Estilo de los íconos en el escritorio */
-.icon {
-    width: 80px;
+header {
+    background: #000;
+    color: #fff;
+    padding: 20px;
     text-align: center;
-    margin: 20px;
-    cursor: pointer;
-    color: white;
-    position: absolute;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.icon img {
-    width: 48px;
-    height: 48px;
+h1 {
+    font-size: 2em;
+    margin: 0;
 }
 
-.icon p {
-    font-size: 12px;
-    margin-top: 5px;
+a {
+    color: #000;
+    text-decoration: none;
 }
 
-/* Estilo de las ventanas emergentes */
-.window {
-    position: fixed;
-    background-color: #E0E0E0;
+a.back {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #000;
     border: 2px solid #000;
-    width: 400px;
-    height: 300px;
-    display: none;
-    z-index: 10;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.window-header {
-    background-color: #C0C0C0;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-    cursor: move;
+main {
+    padding: 20px;
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
 }
 
-.window-header button {
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #000;
 }
 
-.window-content {
+th, td {
     padding: 10px;
-    font-size: 14px;
-    display: flex;
-    flex-wrap: wrap;
+    text-align: left;
+    border: 1px solid #fff;
 }
 
-.window .icon {
-    width: 80px;
+th {
+    background: #555;
+    color: #fff;
+}
+
+footer {
     text-align: center;
-    margin: 10px;
-    color: black;
-    position: relative;
+    padding: 10px 0;
+    background: #000;
+    color: #fff;
 }
 
-.window .icon img {
-    width: 48px;
-    height: 48px;
+address {
+    font-style: normal;
 }
