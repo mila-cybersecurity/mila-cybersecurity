@@ -42,8 +42,6 @@ body, html {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    min-width: 200px; /* Ancho mínimo */
-    min-height: 150px; /* Alto mínimo */
 }
 
 /* Estilo del encabezado de las ventanas */
@@ -72,15 +70,11 @@ body, html {
     height: 20px;
 }
 
-/* Estilo para el manejador de redimensionamiento */
-.resize-handle {
-    width: 20px;
-    height: 20px;
-    background: #007BFF; /* Color del manejador */
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    cursor: se-resize; /* Cursor para indicar redimensionamiento */
+/* Estilo para los botones de redimensionar */
+.window-header button:nth-child(2),
+.window-header button:nth-child(3) {
+    background-color: #007BFF; /* Color de fondo para botones de redimensionar */
+    margin-left: 5px; /* Espacio entre los botones */
 }
 
 /* Responsividad */
