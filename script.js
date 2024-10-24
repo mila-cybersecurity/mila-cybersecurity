@@ -1,6 +1,6 @@
-function openFolder(folderId) {
-    // Muestra la ventana asociada al folder
-    document.getElementById(folderId).style.display = 'block';
+function openWindow(windowId) {
+    // Muestra la ventana asociada a la carpeta
+    document.getElementById(windowId).style.display = 'block';
 }
 
 function closeWindow(windowId) {
