@@ -1,9 +1,8 @@
-// Función para abrir una ventana con un tamaño específico
+// Función para abrir una ventana
 function openWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     windowElement.style.display = 'block';
     centerWindow(windowElement); // Centra la ventana cuando se abre
-    setInitialSize(windowElement); // Establece el tamaño inicial
 }
 
 // Función para cerrar una ventana
@@ -19,69 +18,38 @@ function centerWindow(windowElement) {
     windowElement.style.transform = "translate(-50%, -50%)";
 }
 
-// Función para establecer el tamaño inicial de la ventana
-function setInitialSize(windowElement) {
-    windowElement.style.width = '10cm'; // Tamaño inicial de 10x10 cm
-    windowElement.style.height = '10cm';
-}
-
-// Función para alternar el tamaño de la ventana
+// Función para alternar el tamaño de la ventana entre dos estados en computadoras
 function toggleResize(windowId) {
     const windowElement = document.getElementById(windowId);
-    if (windowElement.style.width === '15cm') {
-        windowElement.style.width = '10cm'; // Regresar al tamaño pequeño
-        windowElement.style.height = '10cm';
+    
+    // En móviles, las ventanas no serán redimensionables
+    if (window.innerWidth <= 768) {
+        return;  // No permite el redimensionamiento en pantallas pequeñas
+    }
+
+    // Verifica el tamaño actual de la ventana y alterna entre dos tamaños fijos
+    if (windowElement.style.width === '567px') {
+        windowElement.style.width = '378px'; // Tamaño pequeño
+        windowElement.style.height = '378px';
     } else {
-        windowElement.style.width = '15cm'; // Cambiar a tamaño grande
-        windowElement.style.height = '15cm';
+        windowElement.style.width = '567px'; // Tamaño grande
+        windowElement.style.height = '567px';
     }
 }
 
-// Función para abrir una carpeta
-function openFolder(folderId) {
-    const windowElement = document.getElementById(folderId);
-    const windowContent = windowElement.querySelector('.window-content');
-
-    // Limpia el contenido de la ventana y añade el nuevo contenido
-    windowContent.innerHTML = `
-        <div class="icon" onclick="openScript('script1')">
-            <img src="icons/blank.gif" alt="Script 1">
-            <p>Script 1</p>
-        </div>
-        <div class="icon" onclick="openScript('script2')">
-            <img src="icons/blank.gif" alt="Script 2">
-            <p>Script 2</p>
-        </div>
-        <div class="icon" onclick="openScript('script3')">
-            <img src="icons/blank.gif" alt="Script 3">
-            <p>Script 3</p>
-        </div>
-        <button onclick="goBack('${folderId}', 'myDocuments')">Volver</button>
-    `;
-
-    windowElement.style.display = 'block'; // Muestra la ventana de la carpeta
-}
-
-// Función para abrir un script (simulando)
-function openScript(scriptId) {
-    alert(`Abriendo ${scriptId}`); // Simulación de abrir un script
-}
-
-// Función para volver a la carpeta anterior
-function goBack(currentWindow, parentWindow) {
-    closeWindow(currentWindow);
-    openWindow(parentWindow);
-}
-
-// Hacer todas las ventanas movibles
+// Hacer todas las ventanas movibles solo en pantallas grandes
 document.addEventListener("DOMContentLoaded", function() {
     const windows = ['myDocuments', 'aboutMe', 'readme', 'imagesFolder'];
-    windows.forEach(windowId => {
-        makeDraggable(document.getElementById(windowId));
-    });
+    
+    // Hacer arrastrables solo en escritorio
+    if (window.innerWidth > 768) {
+        windows.forEach(windowId => {
+            makeDraggable(document.getElementById(windowId));
+        });
+    }
 });
 
-// Función para arrastrar ventanas
+// Función para arrastrar ventanas en escritorio
 function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     element.querySelector('.window-header').onmousedown = dragMouseDown;
