@@ -23,6 +23,11 @@
             <img src="icons/blank.gif" alt="Readme Icon">
             <p>ReadMe.txt</p>
         </div>
+
+        <div class="icon" onclick="openWindow('imagesFolder')" style="top: 260px; left: 20px;">
+            <img src="icons/folder.gif" alt="Images Icon">
+            <p>Imágenes</p>
+        </div>
     </div>
 
     <!-- Ventanas emergentes -->
@@ -32,7 +37,6 @@
             <button onclick="closeWindow('myDocuments')">X</button>
         </div>
         <div class="window-content" id="myDocumentsContent">
-            <!-- Contenido inicial de "Mis Documentos" -->
             <div class="icon" onclick="openFolder('scriptsFolder')">
                 <img src="icons/folder.gif" alt="Scripts">
                 <p>Scripts</p>
@@ -47,8 +51,13 @@
                 <img src="icons/folder.gif" alt="Bug Bounty">
                 <p>Bug Bounty</p>
             </div>
+
+            <div class="icon" onclick="openFolder('imagesFolder')">
+                <img src="icons/folder.gif" alt="Imágenes">
+                <p>Imágenes</p>
+            </div>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'myDocuments')"></div>
+        <div class="resize-handle" onmousedown="initResize(event, 'myDocuments')" ontouchstart="initResize(event, 'myDocuments')"></div>
     </div>
 
     <!-- Ventana "Sobre Mí" -->
@@ -60,7 +69,7 @@
         <div class="window-content">
             <p>Este es el contenido sobre mí.</p>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'aboutMe')"></div>
+        <div class="resize-handle" onmousedown="initResize(event, 'aboutMe')" ontouchstart="initResize(event, 'aboutMe')"></div>
     </div>
 
     <!-- Ventana "ReadMe.txt" -->
@@ -72,7 +81,7 @@
         <div class="window-content">
             <p>Este es un archivo de texto que describe la página.</p>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'readme')"></div>
+        <div class="resize-handle" onmousedown="initResize(event, 'readme')" ontouchstart="initResize(event, 'readme')"></div>
     </div>
 
     <!-- Ventana "Scripts" -->
@@ -95,7 +104,7 @@
                 <p>script3.py</p>
             </div>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'scriptsFolder')"></div>
+        <div class="resize-handle" onmousedown="initResize(event, 'scriptsFolder')" ontouchstart="initResize(event, 'scriptsFolder')"></div>
     </div>
 
     <!-- Ventana "Hack The Box" -->
@@ -122,7 +131,7 @@
                 <p>document4.pdf</p>
             </div>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'hackTheBoxFolder')"></div>
+        <div class="resize-handle" onmousedown="initResize(event, 'hackTheBoxFolder')" ontouchstart="initResize(event, 'hackTheBoxFolder')"></div>
     </div>
 
     <!-- Ventana "Bug Bounty" -->
@@ -145,7 +154,30 @@
                 <p>document3.pdf</p>
             </div>
         </div>
-        <div class="resize-handle" onmousedown="initResize(event, 'bugBountyFolder')"></div>
+        <div class="resize-handle" onmousedown="initResize(event, 'bugBountyFolder')" ontouchstart="initResize(event, 'bugBountyFolder')"></div>
+    </div>
+
+    <!-- Ventana "Imágenes" -->
+    <div id="imagesFolder" class="window">
+        <div class="window-header">
+            <p>Imágenes</p>
+            <button onclick="closeFolder('imagesFolder')">Atrás</button>
+        </div>
+        <div class="window-content">
+            <div class="icon">
+                <img src="path/to/image1.jpg" alt="Imagen 1">
+                <p>imagen1.jpg</p>
+            </div>
+            <div class="icon">
+                <img src="path/to/image2.jpg" alt="Imagen 2">
+                <p>imagen2.jpg</p>
+            </div>
+            <div class="icon">
+                <img src="path/to/image3.jpg" alt="Imagen 3">
+                <p>imagen3.jpg</p>
+            </div>
+        </div>
+        <div class="resize-handle" onmousedown="initResize(event, 'imagesFolder')" ontouchstart="initResize(event, 'imagesFolder')"></div>
     </div>
 
     <script src="script.js"></script>
