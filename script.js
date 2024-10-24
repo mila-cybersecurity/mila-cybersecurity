@@ -1,9 +1,9 @@
+// Función para abrir una ventana
 function openWindow(windowId) {
-    // Muestra la ventana asociada a la carpeta
     document.getElementById(windowId).style.display = 'block';
 }
 
+// Función para cerrar una ventana
 function closeWindow(windowId) {
-    // Oculta la ventana asociada
     document.getElementById(windowId).style.display = 'none';
 }
