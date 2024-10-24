@@ -19,7 +19,7 @@ body, html {
     height: 100px;
     text-align: center;
     cursor: pointer;
-    position: absolute;
+    position: relative; /* Cambia a 'relative' para que la posición sea relativa al contenedor */
     margin: 10px; /* Espaciado entre íconos */
 }
 
@@ -59,8 +59,8 @@ body, html {
 .window-content {
     padding: 10px;
     display: flex;           /* Usamos flexbox para organizar los íconos */
-    flex-direction: column; /* Alineamos íconos en columnas */
-    gap: 10px;             /* Espaciado entre íconos */
+    flex-wrap: wrap;       /* Permite que los íconos se envuelvan a la siguiente línea */
+    justify-content: space-around; /* Distribuye los íconos uniformemente */
 }
 
 /* Controles de la ventana */
@@ -81,3 +81,4 @@ body, html {
         transform: none;
     }
 }
+
