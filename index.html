@@ -48,6 +48,7 @@
                 <p>Bug Bounty</p>
             </div>
         </div>
+        <div class="resize-handle" onmousedown="initResize(event, 'myDocuments')"></div>
     </div>
 
     <!-- Ventana "Sobre Mí" -->
@@ -72,7 +73,54 @@
         </div>
     </div>
 
+    <!-- Ventana "Scripts" -->
+    <div id="scriptsFolder" class="window">
+        <div class="window-header">
+            <p>Scripts</p>
+            <button onclick="closeWindow('scriptsFolder')">X</button>
+        </div>
+        <div class="window-content">
+            <div class="icon">
+                <img src="icons/blank.gif" alt="Script 1">
+                <p>script1.py</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="Script 2">
+                <p>script2.py</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="Script 3">
+                <p>script3.py</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana "Hack The Box" -->
+    <div id="hackTheBoxFolder" class="window">
+        <div class="window-header">
+            <p>Hack The Box</p>
+            <button onclick="closeWindow('hackTheBoxFolder')">X</button>
+        </div>
+        <div class="window-content">
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 1">
+                <p>document1.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 2">
+                <p>document2.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 3">
+                <p>document3.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 4">
+                <p>document4.pdf</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
