@@ -29,8 +29,10 @@
         <div id="myDocuments" class="window">
             <div class="window-header">
                 <span>Mis Documentos</span>
-                <button onclick="closeWindow('myDocuments')">X</button>
-                <button onclick="toggleResize('myDocuments')">🔳</button>
+                <div class="window-controls">
+                    <button onclick="closeWindow('myDocuments')" class="close-button">X</button>
+                    <button onclick="toggleResize('myDocuments')" class="resize-button">🔳</button>
+                </div>
             </div>
             <div class="window-content">
                 <div class="icon" onclick="openFolder('myDocumentsFolder1')">
@@ -52,8 +54,10 @@
         <div id="aboutMe" class="window">
             <div class="window-header">
                 <span>Sobre Mí</span>
-                <button onclick="closeWindow('aboutMe')">X</button>
-                <button onclick="toggleResize('aboutMe')">🔳</button>
+                <div class="window-controls">
+                    <button onclick="closeWindow('aboutMe')" class="close-button">X</button>
+                    <button onclick="toggleResize('aboutMe')" class="resize-button">🔳</button>
+                </div>
             </div>
             <div class="window-content">
                 <p>Información sobre mí...</p>
@@ -64,8 +68,10 @@
         <div id="readme" class="window">
             <div class="window-header">
                 <span>README</span>
-                <button onclick="closeWindow('readme')">X</button>
-                <button onclick="toggleResize('readme')">🔳</button>
+                <div class="window-controls">
+                    <button onclick="closeWindow('readme')" class="close-button">X</button>
+                    <button onclick="toggleResize('readme')" class="resize-button">🔳</button>
+                </div>
             </div>
             <div class="window-content">
                 <p>Contenido del README...</p>
@@ -76,8 +82,10 @@
         <div id="imagesFolder" class="window">
             <div class="window-header">
                 <span>Imágenes</span>
-                <button onclick="closeWindow('imagesFolder')">X</button>
-                <button onclick="toggleResize('imagesFolder')">🔳</button>
+                <div class="window-controls">
+                    <button onclick="closeWindow('imagesFolder')" class="close-button">X</button>
+                    <button onclick="toggleResize('imagesFolder')" class="resize-button">🔳</button>
+                </div>
             </div>
             <div class="window-content">
                 <div class="icon">
@@ -97,5 +105,8 @@
     </div>
 
     <script src="script.js"></script>
+</body>
+</html>
+
 </body>
 </html>
