@@ -9,9 +9,8 @@ body, html {
 
 /* Estilo del escritorio */
 #desktop {
-    position: relative;
-    width: 100vw; /* Ajuste para el tamaño completo de la pantalla */
-    height: 100vh; /* Ajuste para el tamaño completo de la pantalla */
+    position: relative; /* Para posicionar los íconos */
+    height: 100%;
 }
 
 /* Estilo de los íconos en el escritorio */
@@ -22,100 +21,48 @@ body, html {
     position: absolute; /* Para que se puedan colocar en posiciones específicas */
 }
 
+/* Estilo de las imágenes de los íconos */
 .icon img {
     width: 48px;
     height: 48px;
 }
 
+/* Estilo para el texto debajo de los íconos */
 .icon p {
     font-size: 12px;
     margin-top: 5px;
 }
 
-/* Estilo de las ventanas emergentes */
+/* Estilo para las ventanas */
 .window {
-    position: fixed;
-    background-color: #E0E0E0;
-    border: 2px solid #000;
-    width: 500px; /* Aumentar el ancho */
-    height: 400px; /* Aumentar la altura */
-    display: none;
-    z-index: 10;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    display: none; /* Oculta las ventanas por defecto */
+    position: absolute; /* Para que se puedan mover */
+    border: 2px solid #333;
+    background-color: #FFF; /* Color de fondo blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 500px; /* Ancho inicial */
+    height: 400px; /* Alto inicial */
+    z-index: 10; /* Para que se muestre por encima de otros elementos */
 }
 
-/* Estilo del encabezado de las ventanas */
+/* Estilo del encabezado de la ventana */
 .window-header {
-    background-color: #007BFF; /* Color de fondo del encabezado */
-    color: white;
-    padding: 10px;
-    cursor: move;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #0078D7; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    padding: 5px;
+    cursor: move; /* Cursor de movimiento */
 }
 
-/* Controles de la ventana */
+/* Estilo para los controles de la ventana */
 .window-controls {
-    display: flex;
-    align-items: center;
+    float: right;
 }
 
-/* Estilo para el botón de cerrar */
-.close-button {
-    background-color: red; /* Color del botón de cerrar */
-    color: white;
+/* Estilo de los botones de cerrar y redimensionar */
+.close-button, .resize-button {
+    background: none;
     border: none;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px; /* Espacio entre el botón de cerrar y el de redimensionar */
-}
-
-/* Estilo para el botón de redimensionar */
-.resize-button {
-    background-color: #007BFF; /* Color de fondo para botón de redimensionar */
     color: white;
-    border: none;
+    font-size: 16px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
-}
-
-/* Contenido de la ventana */
-.window-content {
-    padding: 10px;
-    font-size: 14px;
-    display: flex;
-    flex-wrap: wrap; /* Permitir que los íconos se envuelvan */
-    justify-content: center; /* Centrar íconos */
-}
-
-/* Estilo para los iconos dentro de la ventana */
-.window .icon {
-    width: 80px; /* Ancho de los íconos */
-    text-align: center;
-    margin: 10px; /* Espacio entre íconos */
-}
-
-/* Responsividad */
-@media (max-width: 600px) {
-    .icon {
-        width: 60px; /* Ajuste para pantallas pequeñas */
-        margin: 10px;
-    }
-
-    .window {
-        width: 90%; /* Ajuste de ancho para móviles */
-        height: 90%; /* Ajuste de altura para móviles */
-    }
-
-    .window-header {
-        font-size: 16px; /* Tamaño de fuente más grande en móviles */
-    }
-
-    .icon img {
-        width: 36px; /* Ajuste del tamaño del ícono en móviles */
-        height: 36px; /* Ajuste del tamaño del ícono en móviles */
-    }
 }
