@@ -10,24 +10,23 @@ function closeWindow(windowId) {
     document.getElementById(windowId).style.display = 'none';
 }
 
-// Función para centrar la ventana
+// Función para centrar la ventana al abrirla
 function centerWindow(windowElement) {
-    const windowWidth = windowElement.offsetWidth;
-    const windowHeight = windowElement.offsetHeight;
-    windowElement.style.top = `calc(50% - ${windowHeight / 2}px)`;
-    windowElement.style.left = `calc(50% - ${windowWidth / 2}px)`;
+    windowElement.style.top = "50%";
+    windowElement.style.left = "50%";
+    windowElement.style.transform = "translate(-50%, -50%)";
 }
 
-// Función para alternar el tamaño de la ventana
+// Función para redimensionar la ventana
 function toggleResize(windowId) {
     const windowElement = document.getElementById(windowId);
-    const isSmall = windowElement.style.width === '300px';
+    const isSmall = windowElement.style.width === '240px'; // Tamaño pequeño
     if (isSmall) {
-        windowElement.style.width = '600px';
-        windowElement.style.height = '400px';
+        windowElement.style.width = '600px'; // Tamaño grande
+        windowElement.style.height = '600px'; // Tamaño grande
     } else {
-        windowElement.style.width = '300px';
-        windowElement.style.height = '200px';
+        windowElement.style.width = '240px'; // Tamaño pequeño
+        windowElement.style.height = '240px'; // Tamaño pequeño
     }
 }
 
