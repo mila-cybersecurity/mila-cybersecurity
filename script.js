@@ -18,6 +18,19 @@ function centerWindow(windowElement) {
     windowElement.style.left = `calc(50% - ${windowWidth / 2}px)`;
 }
 
+// Función para alternar el tamaño de la ventana
+function toggleResize(windowId) {
+    const windowElement = document.getElementById(windowId);
+    const isSmall = windowElement.style.width === '300px';
+    if (isSmall) {
+        windowElement.style.width = '600px';
+        windowElement.style.height = '400px';
+    } else {
+        windowElement.style.width = '300px';
+        windowElement.style.height = '200px';
+    }
+}
+
 // Función para abrir una carpeta
 function openFolder(folderId) {
     const folders = ['scriptsFolder', 'hackTheBoxFolder', 'bugBountyFolder'];
@@ -34,18 +47,6 @@ function openFolder(folderId) {
 function goBack(currentWindow, parentWindow) {
     closeWindow(currentWindow);
     openWindow(parentWindow);
-}
-
-// Función para redimensionar ventanas
-function resizeWindow(windowId, size) {
-    const windowElement = document.getElementById(windowId);
-    if (size === 'small') {
-        windowElement.style.width = '300px';
-        windowElement.style.height = '200px';
-    } else if (size === 'large') {
-        windowElement.style.width = '600px';
-        windowElement.style.height = '400px';
-    }
 }
 
 // Hacer todas las ventanas movibles
