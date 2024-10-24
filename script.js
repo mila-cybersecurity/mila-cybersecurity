@@ -21,12 +21,23 @@ function centerWindow(windowElement) {
 // Función para alternar el tamaño de la ventana
 function toggleResize(windowId) {
     const windowElement = document.getElementById(windowId);
-    if (windowElement.style.width === '600px') {
-        windowElement.style.width = '500px'; // Tamaño pequeño
-        windowElement.style.height = '400px'; // Tamaño pequeño
-    } else {
-        windowElement.style.width = '600px'; // Tamaño grande
-        windowElement.style.height = '600px'; // Tamaño grande
+    const isSmall = windowElement.style.width === '500px'; // Comprueba si está en tamaño pequeño
+    
+    // Definición de tamaños
+    let windowWidth, windowHeight;
+    if (window.innerWidth < 600) { // Si el ancho de la ventana es menor que 600px (móvil)
+        windowWidth = '90%'; // 90% del ancho de la pantalla
+        windowHeight = isSmall ? '400px' : '90%'; // Altura fija si está pequeña, flexible si está grande
+    } else { // Si es una pantalla más grande (computadora)
+        windowWidth = isSmall ? '500px' : '600px'; // 500px si está pequeña, 600px si está grande
+        windowHeight = isSmall ? '400px' : '600px'; // Altura fija para ambas condiciones
+    }
+
+    windowElement.style.width = windowWidth; // Cambia el ancho
+    windowElement.style.height = windowHeight; // Cambia la altura
+
+    if (!isSmall) {
+        centerWindow(windowElement); // Centrar solo si se expande
     }
 }
 
