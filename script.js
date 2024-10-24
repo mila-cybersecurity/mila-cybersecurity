@@ -1,4 +1,4 @@
-// Función para abrir una ventana
+// Función para abrir una ventana con un tamaño específico
 function openWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     windowElement.style.display = 'block';
@@ -21,23 +21,12 @@ function centerWindow(windowElement) {
 // Función para alternar el tamaño de la ventana
 function toggleResize(windowId) {
     const windowElement = document.getElementById(windowId);
-    const isSmall = windowElement.style.width === '500px'; // Comprueba si está en tamaño pequeño
-    
-    // Definición de tamaños
-    let windowWidth, windowHeight;
-    if (window.innerWidth < 600) { // Si el ancho de la ventana es menor que 600px (móvil)
-        windowWidth = '90%'; // 90% del ancho de la pantalla
-        windowHeight = isSmall ? '60%' : '90%'; // Altura flexible dependiendo del estado
-    } else { // Si es una pantalla más grande (computadora)
-        windowWidth = isSmall ? '500px' : '600px'; // 500px si está pequeña, 600px si está grande
-        windowHeight = isSmall ? '400px' : '600px'; // Altura fija para ambas condiciones
-    }
-
-    windowElement.style.width = windowWidth; // Cambia el ancho
-    windowElement.style.height = windowHeight; // Cambia la altura
-
-    if (!isSmall) {
-        centerWindow(windowElement); // Centrar solo si se expande
+    if (windowElement.style.width === '80%') {
+        windowElement.style.width = '500px'; // Tamaño pequeño
+        windowElement.style.height = '400px'; // Tamaño pequeño
+    } else {
+        windowElement.style.width = '80%'; // Tamaño grande
+        windowElement.style.height = '80%'; // Tamaño grande
     }
 }
 
@@ -107,3 +96,11 @@ function makeDraggable(element) {
         pos3 = e.clientX;
         pos4 = e.clientY;
         element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
