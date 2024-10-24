@@ -1,81 +1,115 @@
-body {
-    font-family: "Courier New", monospace;
-    background-color: #00ff00; /* Verde brillante */
-    color: #000;
+/* Estilos básicos */
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #87CEEB; /* Azul estilo antiguo */
 }
 
+/* Estilo del header */
 header {
-    background: #000;
-    color: #fff;
-    padding: 20px;
     text-align: center;
-    border: 2px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 24px;
 }
 
-h1 {
-    font-size: 2em;
-    margin: 0;
+/* Escritorio */
+#desktop {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 100px);
 }
 
-.main {
-    padding: 20px;
+/* Carpetas y Archivos */
+.folder {
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
+.folder img {
+    width: 64px;
+    height: 64px;
 }
 
-a.back {
-    display: inline-block;
-    margin: 10px 0;
-    padding: 10px 15px;
-    background-color: #fff;
-    color: #000;
+.folder p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Ventanas */
+.window {
+    position: absolute;
+    background-color: white;
     border: 2px solid #000;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    height: 200px;
+    display: none; /* Oculta por defecto */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    z-index: 10;
 }
 
+.window-header {
+    background-color: #C0C0C0;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-header p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.window-header button {
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.window-content {
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Estilo de la tabla de servidores */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    background-color: #000;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
 }
 
 th, td {
-    padding: 10px;
+    padding: 8px;
     text-align: left;
-    border: 1px solid #fff;
 }
 
-th {
-    background: #555;
-    color: #fff;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #000;
-    color: #fff;
-}
-
-address {
-    font-style: normal;
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.5em;
+/* Adaptación para móviles */
+@media only screen and (max-width: 600px) {
+    .folder {
+        margin: 10px;
     }
-    
-    th, td {
-        font-size: 0.9em;
+
+    .folder img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .window {
+        width: 90%;
+        height: 50%;
     }
 }
