@@ -1,7 +1,9 @@
-// Función para abrir una ventana
+// Función para abrir una ventana con un tamaño específico
 function openWindow(windowId) {
     const windowElement = document.getElementById(windowId);
     windowElement.style.display = 'block';
+    windowElement.style.width = '240px'; // Tamaño pequeño al abrir
+    windowElement.style.height = '240px'; // Tamaño pequeño al abrir
     centerWindow(windowElement); // Centra la ventana cuando se abre
 }
 
@@ -32,14 +34,32 @@ function toggleResize(windowId) {
 
 // Función para abrir una carpeta
 function openFolder(folderId) {
-    const folders = ['scriptsFolder', 'hackTheBoxFolder', 'bugBountyFolder'];
-    folders.forEach(folder => {
-        const folderElement = document.getElementById(folder);
-        if (folderElement) {
-            folderElement.style.display = 'none';
-        }
-    });
-    document.getElementById(folderId).style.display = 'block';
+    const windowElement = document.getElementById(folderId);
+    const windowContent = windowElement.querySelector('.window-content');
+
+    // Limpia el contenido de la ventana y añade el nuevo contenido
+    windowContent.innerHTML = `
+        <div class="icon" onclick="openScript('script1')">
+            <img src="icons/blank.gif" alt="Script 1">
+            <p>Script 1</p>
+        </div>
+        <div class="icon" onclick="openScript('script2')">
+            <img src="icons/blank.gif" alt="Script 2">
+            <p>Script 2</p>
+        </div>
+        <div class="icon" onclick="openScript('script3')">
+            <img src="icons/blank.gif" alt="Script 3">
+            <p>Script 3</p>
+        </div>
+        <button onclick="goBack('${folderId}', 'myDocuments')">Volver</button>
+    `;
+
+    windowElement.style.display = 'block'; // Muestra la ventana de la carpeta
+}
+
+// Función para abrir un script (simulando)
+function openScript(scriptId) {
+    alert(`Abriendo ${scriptId}`); // Simulación de abrir un script
 }
 
 // Función para volver a la carpeta anterior
