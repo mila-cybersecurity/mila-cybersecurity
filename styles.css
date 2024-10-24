@@ -1,73 +1,71 @@
-/* Estilo general del "escritorio" */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Tahoma, sans-serif;
-    background-color: #3A6EA5; /* Color de fondo azul */
+/* Estilo del cuerpo */
+body {
+    background-color: #e0e0e0; /* Color de fondo gris claro */
+    font-family: Arial, sans-serif; /* Fuente para el texto */
 }
 
-/* Estilo del escritorio */
+/* Estilo para el escritorio */
 #desktop {
-    position: relative; /* Para posicionar los íconos */
-    height: 100%;
-    display: flex; /* Usar flexbox */
-    flex-wrap: wrap; /* Permitir que los íconos se ajusten */
-    justify-content: center; /* Centrar íconos horizontalmente */
+    position: relative; /* Necesario para posicionar los iconos */
+    height: 100vh; /* Altura completa de la vista */
 }
 
-/* Estilo de los íconos en el escritorio */
+/* Estilo para los iconos */
 .icon {
-    width: 80px;
-    text-align: center;
-    color: black;
-    margin: 10px; /* Espacio entre íconos */
-    position: relative; /* Cambiar a relative para evitar conflicto con absolute */
-}
-
-/* Estilo de las imágenes de los íconos */
-.icon img {
-    width: 33px;
-    height: 40px;
-}
-
-/* Estilo para el texto debajo de los íconos */
-.icon p {
-    font-size: 12px;
-    margin-top: 5px;
+    width: 80px; /* Ancho del icono */
+    text-align: center; /* Centrar el texto bajo el icono */
+    margin: 10px; /* Espacio alrededor de cada icono */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
 }
 
 /* Estilo para las ventanas */
 .window {
     display: none; /* Oculta las ventanas por defecto */
-    position: absolute; /* Para que se puedan mover */
+    position: fixed; /* Cambia a fixed para mantener la ventana dentro de la vista */
     border: 2px solid #333;
     background-color: #FFF; /* Color de fondo blanco */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 90%; /* Ancho inicial adaptable */
-    max-width: 600px; /* Máximo ancho para pantallas grandes */
-    height: auto; /* Alto automático */
+    max-width: 90%; /* Ancho máximo del 90% */
+    max-height: 90%; /* Altura máxima del 90% */
     z-index: 10; /* Para que se muestre por encima de otros elementos */
+    overflow-y: auto; /* Habilita desplazamiento vertical si el contenido es demasiado largo */
 }
 
-/* Estilo del encabezado de la ventana */
+/* Estilo para la cabecera de la ventana */
 .window-header {
-    background-color: #0078D7; /* Color de fondo azul */
-    color: white; /* Color del texto */
-    padding: 5px;
-    cursor: move; /* Cursor de movimiento */
+    background-color: #f0f0f0; /* Color de fondo de la cabecera */
+    padding: 10px; /* Espaciado dentro de la cabecera */
+    cursor: move; /* Cursor de movimiento para arrastrar */
+    display: flex; /* Uso de flexbox para el contenido */
+    justify-content: space-between; /* Espacio entre el título y los controles */
 }
 
-/* Estilo para los controles de la ventana */
+/* Estilo para los botones de control de la ventana */
 .window-controls {
-    float: right;
+    display: flex; /* Uso de flexbox para el control de ventanas */
 }
 
-/* Estilo de los botones de cerrar y redimensionar */
-.close-button, .resize-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+/* Estilo para el botón de cerrar */
+.close-button {
+    margin-left: 5px; /* Espacio entre botones */
+    background-color: red; /* Color de fondo rojo */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    padding: 5px 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilo para el botón de redimensionar */
+.resize-button {
+    margin-left: 5px; /* Espacio entre botones */
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    padding: 5px 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilo para el contenido de la ventana */
+.window-content {
+    padding: 10px; /* Espaciado dentro del contenido */
 }
