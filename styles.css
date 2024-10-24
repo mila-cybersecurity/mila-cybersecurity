@@ -18,9 +18,8 @@ body, html {
 .icon {
     width: 80px;
     text-align: center;
-    margin: 20px; /* Espaciado ajustado entre íconos */
     color: black;
-    position: absolute;
+    position: absolute; /* Para que se puedan colocar en posiciones específicas */
 }
 
 .icon img {
@@ -70,7 +69,6 @@ body, html {
     width: 80px; /* Ancho de los íconos */
     text-align: center;
     margin: 10px; /* Espacio entre íconos */
-    color: black;
 }
 
 /* Estilo para el botón de cerrar */
