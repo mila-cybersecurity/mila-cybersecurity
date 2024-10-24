@@ -21,7 +21,6 @@ body, html {
     margin: 20px; /* Espaciado ajustado entre íconos */
     color: black;
     position: absolute;
-    cursor: pointer;
 }
 
 .icon img {
@@ -36,14 +35,14 @@ body, html {
 
 /* Estilo de las ventanas emergentes */
 .window {
-    display: none; /* Ocultar ventanas inicialmente */
-    position: absolute;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 240px; /* Tamaño pequeño inicial */
-    height: 240px; /* Tamaño pequeño inicial */
+    position: fixed;
+    background-color: #E0E0E0;
+    border: 2px solid #000;
+    width: 500px; /* Aumentar el ancho */
+    height: 400px; /* Aumentar la altura */
+    display: none;
+    z-index: 10;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo del encabezado de las ventanas */
@@ -60,10 +59,18 @@ body, html {
 /* Contenido de la ventana */
 .window-content {
     padding: 10px;
-    display: flex; /* Utilizamos flexbox para la disposición */
-    flex-wrap: wrap; /* Permitir que los íconos se ajusten */
-    gap: 10px; /* Espacio entre los íconos */
-    justify-content: flex-start; /* Alinear los iconos al inicio */
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los íconos se envuelvan */
+    justify-content: center; /* Centrar íconos */
+}
+
+/* Estilo para los iconos dentro de la ventana */
+.window .icon {
+    width: 80px; /* Ancho de los íconos */
+    text-align: center;
+    margin: 10px; /* Espacio entre íconos */
+    color: black;
 }
 
 /* Estilo para el botón de cerrar */
@@ -92,8 +99,6 @@ body, html {
     .window {
         width: 90%; /* Ajuste de ancho para móviles */
         height: 90%; /* Ajuste de altura para móviles */
-        top: 5%; /* Posicionar la ventana más centrada */
-        left: 5%; /* Posicionar la ventana más centrada */
     }
 
     .window-header {
