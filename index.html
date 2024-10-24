@@ -3,91 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Profile</title>
+    <title>Mi Escritorio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>_Cybersecurity Profile</h1>
-    </header>
-    
-    <!-- Escritorio de directorio -->
-    <main id="desktop">
-        <!-- Carpeta: "About me" -->
-        <div class="folder" onclick="openFolder('aboutMe')">
-            <img src="folder-icon.png" alt="[DIR]">
-            <p>About Me</p>
+    <!-- Escritorio -->
+    <div id="desktop">
+        <!-- Iconos de carpetas -->
+        <div class="icon" onclick="openWindow('myDocuments')">
+            <img src="folder-icon.png" alt="Carpeta" class="icon-image">
+            <p>Mis Documentos</p>
         </div>
-
-        <!-- Carpeta: "Scripts" -->
-        <div class="folder" onclick="openFolder('scripts')">
-            <img src="folder-icon.png" alt="[DIR]">
-            <p>Scripts</p>
+        <div class="icon" onclick="openWindow('aboutMe')">
+            <img src="folder-icon.png" alt="Carpeta" class="icon-image">
+            <p>Sobre Mí</p>
         </div>
+    </div>
 
-        <!-- Carpeta: "Hack the Box" -->
-        <div class="folder" onclick="openFolder('hackTheBox')">
-            <img src="folder-icon.png" alt="[DIR]">
-            <p>Hack the Box</p>
+    <!-- Ventana de "Mis Documentos" -->
+    <div id="myDocuments" class="window">
+        <div class="window-header">
+            <p>Mis Documentos</p>
+            <button onclick="closeWindow('myDocuments')">X</button>
         </div>
-
-        <!-- Carpeta: "Bug Bounty" -->
-        <div class="folder" onclick="openFolder('bugBounty')">
-            <img src="folder-icon.png" alt="[DIR]">
-            <p>Bug Bounty</p>
+        <div class="window-content">
+            <ul>
+                <li><a href="project1.pdf" target="_blank">Proyecto1.pdf</a></li>
+                <li><a href="script.py" target="_blank">script.py</a></li>
+                <li><a href="notes.txt" target="_blank">notes.txt</a></li>
+            </ul>
         </div>
+    </div>
 
-        <!-- Tabla de contenido (simulación de estructura de servidor) -->
-        <div id="aboutMe" class="window">
-            <div class="window-header">
-                <p>About Me</p>
-                <button onclick="closeWindow('aboutMe')">X</button>
-            </div>
-            <div class="window-content">
-                <p>Información sobre mí.</p>
-            </div>
+    <!-- Ventana de "Sobre Mí" -->
+    <div id="aboutMe" class="window">
+        <div class="window-header">
+            <p>Sobre Mí</p>
+            <button onclick="closeWindow('aboutMe')">X</button>
         </div>
-
-        <div id="scripts" class="window">
-            <div class="window-header">
-                <p>Scripts</p>
-                <button onclick="closeWindow('scripts')">X</button>
-            </div>
-            <div class="window-content">
-                <ul>
-                    <li><a href="script1.py" target="_blank">Script 1 (Python)</a></li>
-                    <li><a href="script2.sh" target="_blank">Script 2 (Bash)</a></li>
-                    <li><a href="script3.ps1" target="_blank">Script 3 (PowerShell)</a></li>
-                </ul>
-            </div>
+        <div class="window-content">
+            <p>Información personal y experiencia.</p>
         </div>
-
-        <div id="hackTheBox" class="window">
-            <div class="window-header">
-                <p>Hack the Box</p>
-                <button onclick="closeWindow('hackTheBox')">X</button>
-            </div>
-            <div class="window-content">
-                <p>Retos y soluciones de Hack the Box.</p>
-            </div>
-        </div>
-
-        <div id="bugBounty" class="window">
-            <div class="window-header">
-                <p>Bug Bounty</p>
-                <button onclick="closeWindow('bugBounty')">X</button>
-            </div>
-            <div class="window-content">
-                <p>Información sobre mis experiencias con Bug Bounty.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <address>Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/5.6.31 Server at github.com Port 443</address>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
