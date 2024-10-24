@@ -1,87 +1,79 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+/* Estilo general del "escritorio" */
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    font-family: Tahoma, sans-serif;
+    background-color: #3A6EA5; /* Color de fondo azul */
 }
 
+/* Estilo del escritorio */
 #desktop {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('background.jpg'); /* Cambia esto por tu imagen de fondo */
-    background-size: cover;
+    position: relative; /* Para posicionar los íconos */
+    height: 100%;
 }
 
+/* Estilo de los íconos en el escritorio */
 .icon {
-    position: absolute;
-    width: 100px;
+    width: 80px;
+    height: 100px;
     text-align: center;
     cursor: pointer;
+    position: absolute;
 }
 
 .icon img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 }
 
+.icon p {
+    margin-top: 5px;
+    font-size: 12px;
+    color: white;
+}
+
+/* Estilo de las ventanas */
 .window {
-    position: absolute;
-    width: 500px;
-    height: 400px;
-    background-color: white;
-    border: 2px solid #ccc;
-    border-radius: 5px;
     display: none;
-    flex-direction: column;
+    position: absolute;
+    width: 378px;
+    height: 378px;
+    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
 .window-header {
-    background-color: #0078D7;
+    height: 30px;
+    background-color: #555;
     color: white;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: move;
 }
 
-.window-controls {
-    display: flex;
+.window-content {
+    padding: 10px;
 }
 
-.close-button, .resize-button {
+/* Controles de la ventana */
+.window-controls button {
     background: none;
     border: none;
     color: white;
-    font-size: 16px;
-    margin-left: 5px;
     cursor: pointer;
 }
 
-.window-content {
-    padding: 10px;
-    flex: 1;
-    overflow-y: auto; /* Permite hacer scroll si hay mucho contenido */
-}
-
-@media (max-width: 600px) {
+/* Responsividad: Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
     .window {
-        width: 90%; /* Ajusta el tamaño de la ventana en pantallas pequeñas */
+        width: 90%;  /* Ocupa el 90% de la pantalla en móviles */
         height: 90%;
-    }
-
-    .icon {
-        width: 80px; /* Ajusta el tamaño de los íconos en pantallas pequeñas */
-    }
-
-    .icon img {
-        width: 40px;
-        height: 40px;
+        left: 5%;  /* Centra horizontalmente */
+        top: 5%;   /* Centra verticalmente */
+        transform: none;
     }
 }
