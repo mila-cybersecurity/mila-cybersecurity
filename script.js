@@ -60,8 +60,14 @@ function initResize(e, windowId) {
     document.onmousemove = elementResize;
 
     function elementResize(e) {
-        windowElement.style.width = (e.clientX - windowElement.getBoundingClientRect().left) + "px";
-        windowElement.style.height = (e.clientY - windowElement.getBoundingClientRect().top) + "px";
+        var newWidth = e.clientX - windowElement.getBoundingClientRect().left;
+        var newHeight = e.clientY - windowElement.getBoundingClientRect().top;
+
+        // Aplicar límites de tamaño
+        if (newWidth > 150 && newHeight > 100) { // Tope de tamaño
+            windowElement.style.width = newWidth + "px";
+            windowElement.style.height = newHeight + "px";
+        }
     }
 
     function stopResize() {
@@ -71,6 +77,85 @@ function initResize(e, windowId) {
     }
 }
 
+// Función para abrir una carpeta
+function openFolder(folderId) {
+    var content = '';
+    if (folderId === 'scriptsFolder') {
+        content = `
+            <div class="icon" onclick="viewScript('script1.py')">
+                <img src="icons/blank.gif" alt="Script 1">
+                <p>script1.py</p>
+            </div>
+            <div class="icon" onclick="viewScript('script2.py')">
+                <img src="icons/blank.gif" alt="Script 2">
+                <p>script2.py</p>
+            </div>
+            <div class="icon" onclick="viewScript('script3.py')">
+                <img src="icons/blank.gif" alt="Script 3">
+                <p>script3.py</p>
+            </div>
+        `;
+    } else if (folderId === 'hackTheBoxFolder') {
+        content = `
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 1">
+                <p>document1.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 2">
+                <p>document2.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 3">
+                <p>document3.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 4">
+                <p>document4.pdf</p>
+            </div>
+        `;
+    } else if (folderId === 'bugBountyFolder') {
+        content = `
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 1">
+                <p>document1.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 2">
+                <p>document2.pdf</p>
+            </div>
+            <div class="icon">
+                <img src="icons/blank.gif" alt="PDF 3">
+                <p>document3.pdf</p>
+            </div>
+        `;
+    }
+
+    var windowElement = document.getElementById('myDocuments');
+    var contentElement = document.getElementById('myDocumentsContent');
+    contentElement.innerHTML = content;
+}
+
+// Función para cerrar una carpeta y volver
+function closeFolder(folderId) {
+    var windowElement = document.getElementById(folderId);
+    var myDocumentsContent = document.getElementById('myDocumentsContent');
+    myDocumentsContent.innerHTML = `
+        <div class="icon" onclick="openFolder('scriptsFolder')">
+            <img src="icons/folder.gif" alt="Scripts">
+            <p>Scripts</p>
+        </div>
+        <div class="icon" onclick="openFolder('hackTheBoxFolder')">
+            <img src="icons/folder.gif" alt="Hack The Box">
+            <p>Hack The Box</p>
+        </div>
+        <div class="icon" onclick="openFolder('bugBountyFolder')">
+            <img src="icons/folder.gif" alt="Bug Bounty">
+            <p>Bug Bounty</p>
+        </div>
+    `;
+}
+
 // Hacer todas las ventanas movibles y redimensionables
 document.addEventListener("DOMContentLoaded", function() {
     makeDraggable(document.getElementById('myDocuments'));
@@ -78,4 +163,5 @@ document.addEventListener("DOMContentLoaded", function() {
     makeDraggable(document.getElementById('readme'));
     makeDraggable(document.getElementById('scriptsFolder'));
     makeDraggable(document.getElementById('hackTheBoxFolder'));
+    makeDraggable(document.getElementById('bugBountyFolder'));
 });
